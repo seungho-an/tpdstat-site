@@ -1,0 +1,28 @@
+---
+title: "Data Transformation and Wrangling"
+date: 2023-03-08
+---
+
+
+## Readings 
+
+- [Chapter 3 of Modern Dive](https://moderndive.com/3-wrangling.html)
+
+## Data
+
+- Install the TPDdata package that has new data for this week:
+```{r}
+#| eval: false
+remotes::install_github("seungho-an/TPDdata")
+```
+
+<!-- ## Slides and Code -->
+
+<!-- - Tuesday (9/13) lecture: Data Wrangling -->
+<!--   - [PDF of slides as I present them](/slides/04_data_wrangling.pdf) -->
+<!--   - [PDF of handout version of slides](/slides/04_data_wrangling_handout.pdf) (no incremental slides) -->
+
+<!-- - Thursday (9/15) lecture: Data Wrangling and Barplots -->
+<!--   - [PDF of slides as I present them](/slides/05_data_wrangling.pdf) -->
+<!--   - [PDF of handout version of slides](/slides/05_data_wrangling_handout.pdf) (no incremental slides) -->
+<!--   - Code: [`news.Rmd`](/files/code/news.Rmd) -->

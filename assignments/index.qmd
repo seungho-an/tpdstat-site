@@ -1,0 +1,31 @@
+---
+title: "Assignments"
+---
+
+## Tutorials
+
+- [Tutorial Instructions](/assignments/tutorials.qmd)
+<!-- - [Tutorial 1: Data Visualization] -->
+<!-- - [Tutorial 2: Data Wrangling] -->
+<!-- - [Tutorial 3: Causality] -->
+<!-- - [Tutorial 4: Summarizing Data] -->
+<!-- - [Tutorial 5: Correlation and Tidying Data] -->
+<!-- - [Tutorial 6: Loops] -->
+<!-- - [Tutorial 7: Regression and Sampling] -->
+<!-- - [Tutorial 8: Bootstrap] -->
+
+## Problem Sets
+
+- [Problem set 1: Data Visualization](/assignments/01_hw_data_viz.qmd) 
+<!-- - [Problem set 2: Data Wrangling](/assignments/02_hw_data_wrangling.qmd)  -->
+<!-- - [Problem set 3: Causality](/assignments/03_hw_causality.qmd)  -->
+<!-- - [Problem set 4: Summarizing Data](/assignments/04_hw_summarizing.qmd)  -->
+<!-- - [Problem set 5: Regression](/assignments/05_hw_regression.qmd)  -->
+<!-- - [Problem set 6: Sampling](/assignments/06_hw_sampling.qmd)  -->
+<!-- - [Problem set 7: Bootstrapping](/assignments/07_hw_bootstrap.qmd)  -->
+<!-- - [Problem set 8: Hypothesis Tests](/assignments/08_hw_hyp_tests.qmd)  -->
+
+## Final Project 
+
+- [Final project information](/assignments/final-project.html)
+<!-- - [Final project milestone 1: Creating a repo](/assignments/distill.qmd) -->

@@ -1,0 +1,14 @@
+{
+  "hash": "811d4f2018114f332eda64498b1a0676",
+  "result": {
+    "markdown": "---\ntitle: \"Prediction: Elections and Regression\"\ndate: 2023-04-05\n---\n\n\n\n## Readings \n\n- For prediction and loops, see QSS  4.1 (you can skip 4.1.1)\n- For regression, see either MD Ch 5 or QSS 4.2 (you can skip 4.2.5). \n\n## Data\n\n- Reinstall the TPDdata package that has new data for this week:\n\n::: {.cell}\n\n```{.r .cell-code}\nremotes::install_github(\"seungho-an/TPDdata\")\n```\n:::\n\n\n<!-- - If you cannot install the package, you can download the data locally at -->\n<!--   - [`poll20.csv`](/files/data/polls20.csv) -->\n<!--   - [`pres20.csv`](/files/data/pres20.csv) -->\n<!--   - [`national_poll20.csv`](/files/data/national_polls20.csv) -->\n\n<!-- ```{r} -->\n<!-- #| eval: false -->\n<!-- library(tidyverse) -->\n<!-- polls20 <- read_csv(\"polls20.csv\") -->\n<!-- pres20 <- read_csv(\"pres20.csv\") -->\n<!-- national_polls20 <- read_csv(\"national_polls20.csv\") -->\n<!-- ``` -->\n\n- You may need to install the `lubridate` and `broom` packages if it's not installed:\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"lubridate\")\ninstall.packages(\"broom\")\n```\n:::\n\n\n## Slides \n\n<!-- - Tuesday (10/11) lecture: Prediction and loops -->\n<!--   - [PDF of slides as I present them](/slides/12_prediction_loops.pdf) -->\n<!--   - [PDF of handout version of slides](/slides/12_prediction_loops_handout.pdf) (no incremental slides) -->\n\n<!-- - Tuesday (10/13) lecture: Regression -->\n<!--   - [PDF of slides as I present them](/slides/13_regression.pdf) -->\n<!--   - [PDF of handout version of slides](/slides/13_regression_handout.pdf) (no incremental slides) -->\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

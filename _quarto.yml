@@ -1,0 +1,96 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "*.Rmd"
+    - "*.md"
+    - "!files/"
+
+website:
+  title: "TPDstat"
+  favicon: "files/img/TPD-icon.png"
+  navbar:
+    pinned: true
+    background: "#3498db"
+    right:
+      - syllabus.qmd
+      - schedule.qmd
+      - text: "Materials"
+        file: materials/index.qmd
+      - text: "Assignments"
+        file: assignments/index.qmd
+      - text: "Resources"
+        file: resources/index.qmd
+
+  sidebar:
+    - title: "Materials"
+      style: "docked"
+      search: false
+      background: dark
+      contents:
+        - section: "Overview"
+          contents:
+            - materials/index.qmd
+        - section: "Course Materials"
+          contents:
+            - text: "1: Introduction to TPDStat & Data Visualization"
+              file: materials/01_intro.qmd
+            - text: "2: Data Wrangling"
+              file: materials/02_data_wrangling.qmd
+            - text: "3: Causality"
+              file: materials/03_causality.qmd
+            - text: "4: Summarizing and Measurement"
+              file: materials/04_measurement.qmd
+            - text: "5: Relationships, Functions, and Importing/Tidying Data"
+              file: materials/05_bivariate_tidying.qmd
+            - text: "6: Prediction and Regression"
+              file: materials/06_prediction.qmd
+            - text: "7: More Regression"
+              file: materials/07_regression.qmd
+            - text: "8: Sampling"
+              file: materials/08_sampling.qmd
+            - text: "9: Bootstrap and Confidence Intervals"
+              file: materials/09_bootstrap.qmd
+            - text: "10: Hypothesis Testing"
+              file: materials/10_hyp_tests.qmd
+              
+    - title: "Assignments"
+      style: "docked"
+      search: false
+      background: dark
+      contents:
+        - section: "Resources"
+          contents:
+            - assignments/index.qmd
+            - assignments/tutorials.qmd
+            - assignments/problem-sets.qmd
+        - section: "Assignments"
+          contents:
+            - text: "Problem Set 1"
+              file: assignments/01_hw_data_viz.qmd
+            - text: "Problem Set 2"
+              file: assignments/02_hw_data_wrangling.qmd
+            - text: "Problem Set 3"
+              file: assignments/03_hw_causality.qmd
+            - text: "Problem Set 4"
+              file: assignments/04_hw_summarizing.qmd
+            - text: "Problem Set 5"
+              file: assignments/05_hw_regression.qmd
+            - text: "Problem Set 6"
+              file: assignments/06_hw_sampling.qmd              
+            - text: "Problem Set 7"
+              file: assignments/07_hw_bootstrap.qmd              
+            - text: "Problem Set 8"
+              file: assignments/08_hw_hyp_tests.qmd              
+format:
+  html:
+    theme:
+      - litera
+      - html/custom.scss
+    toc: true
+
+execute:
+  freeze: auto
+
+
+

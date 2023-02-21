@@ -1,0 +1,10 @@
+---
+title: "Readings and lectures"
+---
+
+ 
+
+Each class session has a set of required readings. ***Before*** attempting tutorials, you should complete the readings.
+
+
+<!-- All lecture notes combined into one PDF: [`gov50notes.pdf`](/slides/gov50notes.pdf) -->

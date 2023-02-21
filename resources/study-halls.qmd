@@ -1,0 +1,36 @@
+---
+title: "Study Hall Schedule"
+slug: schedule
+summary: "Schedule of the Gov 50 Study Halls."
+toc: false
+sidebar: false
+page-layout: full
+---
+
+ 
+```{r packages-data, include=FALSE} 
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(lubridate)
+library(glue)
+
+schedule <- read_csv("../data/study-halls.csv", show_col_types = FALSE) 
+```
+ 
+```{r build-table, echo=FALSE, results="asis"}
+tbl <- schedule |>
+  kbl(escap = FALSE, align = "llll", table.attr = 'class="schedule-table"') |>
+  kable_styling() |>
+  column_spec(1:3, width = "20%", extra_css = "padding-right: 20px;") |>  
+  column_spec(4, width = "60%")
+
+  cat(tbl)
+```
+
+ 
+### Schedule changes
+
+- Reem's 10/3 study all is cancelled. 
+- Angie's 10/9 study hall will be moved to 3-5pm on Zoom. See Slack for the link. 
+- Angie's study hall on 10/30 will be moved to 11/1, 2-4pm in the Eliot Private Dining Room. 

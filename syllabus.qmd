@@ -1,0 +1,139 @@
+---
+title: "Syllabus"
+slug: syllabus
+summary: "Information about the content and policies for TPDstat"
+citeproc: true
+output:
+  blogdown::html_page:
+      toc: TRUE
+---
+
+
+
+
+::: {.grid .course-details .course-details-smaller}
+
+::: {.g-col-6}
+### Instructor
+
+- {{< fa user >}} &nbsp; [{{< var instructor.name >}}]({{< var instructor.url >}})
+- {{< fa university >}} &nbsp; {{< var instructor.office >}}
+- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var instructor.email >}}">{{< var instructor.email >}}</a>
+- {{< fa brands twitter >}} &nbsp; [{{< var instructor.twitter >}}](https://www.twitter.com/{{< var instructor.twitter >}})
+- {{< fa calendar-check >}} &nbsp; [Schedule an appointment]({{< var instructor.appointment_url >}})
+
+
+:::
+
+::: {.g-col-6}
+### Course details
+
+- {{< fa calendar >}} &nbsp; {{< var course.days >}}
+- {{< fa calendar-alt >}} &nbsp; {{< var course.dates >}}
+- {{< fa clock >}} &nbsp; {{< var course.time >}}
+- {{< fa location-dot >}} &nbsp; {{< var course.location >}}
+
+
+:::
+
+:::
+
+
+## Course objectives
+
+
+In this course, you will learn the basics of data science as applied to the social sciences. This involves two broad skill sets: (1) learning the computing and programming tools to both manage and analyze data; and (2) understanding the conceptual foundations of why we might manage or analyze data in one way versus another. This course will address both of these topics.
+
+Specifically, at the end of the course you should be able to:
+
+- Summarize and visualize data
+- Wrangle messy data into tidy forms
+- Evaluate claims about causality
+- Be able to use linear regression to analyze data
+- Understand uncertainty in data analysis and how to quantify it
+- Use professional tools for data analysis such as R and RStudio
+
+### Expectations
+
+In this course, you will be expected to
+
+- complete seven problem sets,
+- complete eight tutorials, and
+- write one final data analysis project (optional).
+
+
+### Prerequisites
+
+No prerequisites will be assumed.  This course requires installing certain programs and R packages. If you are not familiar with these, feel free to reach out to me! 
+
+
+## Course structure
+
+### Flow of the Course
+
+The course will follow a basic flow each week, with small differences if a tutorial and/or problem set is provided.
+
+- **Tuesday**: Complete reading, complete tutorial (if due). 
+- **Wednesday**: Lecture; complete problem set (if due)
+
+### Tutorials
+
+Short tutorials to assess your knowledge of the material covered in the reading materials that week will be provided. 
+
+### Lectures
+
+We will meet once a week for about 2 hours lecture where I will combine presenting material and may be doing live coding demonstrations. Ideally, you should bring your laptop to class and be ready to code along with me! 
+
+
+### Group work
+
+Each individual should work on their own answer for problem sets and final project but working together as a group is highly encouraged. Even if you are already familiar with the topic, while helping others, you can internalize the tools and techniques that we cover in class. To solve programming issues (or social science issues in general), there is no single solution. Learning and solving problems together can broaden your skill sets and knowledge (*this works really well!*). 
+
+### Problem Sets
+
+Statistics and programming skills are not something that we can easily acquire by reading books. These skills are fairly similar to learning languages; if you don't practice, you are likely to forget. In addition to basic tutorials, I will also provide problem sets which will give you an opportunity to apply the statistical techniques you are learning. They will usually be focused on data analysis in general and will often involve a real-world dataset. The answers will be provided after its due but your answers will not be graded. 
+
+
+## Final Project (optional)
+
+
+The final project is a data analysis project about whatever data excites you. This could be a project you are currently working on at TPD. If you want more challenges, I highly encourage you pursuing a project with your own dataset. Again, stats and programming can only be learned while doing it (and then repeat the processes over and over again). You are free to choose a topic. Yet, when you do so, you should formulate a key research question that includes a dependent variable(s) and independent variable(s). After that, you should find data that can answer the question and use the tools of the course to analyze the data. Also, keep in mind that when writing up the results, we should always target the general public as our audiance (not many people are as nerdy as we are). Graphs and tables should be interpreted with details!  
+
+The final project should include but not limited to (1) a brief introduction to the research question and data collected; (2) a visualization of the data in question that speaks to your research question; (3) a presentation (as a table or graph) of a regression model assessing your question along with a plain-English interpretation; (4) a brief (one-paragraph) section that describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect). 
+
+
+| Milestone      | Due Date                 |
+|:---------------|:-------------------------|
+| Proposal       | Sun, April 9nd  |
+| Draft Analyses | Sun, April 16th  |
+| Final Report   | Sun, May 7th  |
+
+Note that, the final project is optional, and due dates are tentative and can be quite flexible. The key purpose is for me to provide you feedback on any project that you may be pursuing. Once you complete the final report and want to keep pursuing the project, I will be happy to assist you as well. 
+
+## Course Policies
+
+
+### Office Hours and Availability
+
+I am happy to meet during business hours (most cases from 10:00 to 3:00). If you have questions about the course material, computational issues, or other course-related issues please do not hesitate to set up an appointment with me. Since we all have a full-time job, I can meet during the weekends (if needed). 
+
+If you have a general question, I encourage posting it to the Teams chat since others are likely to have the same question. If you want to be anonymous, you can also email me directly at [seunghoan@arizona.edu](mailto:seunghoan@arizona.edu) and I can post it to the Chat. 
+
+## Course materials
+
+###  Books
+We will use the following books in this class:
+
+- Imai, Kosuke and Nora Webb Willaims. 2022. [*Quantitative Social Science: An Introduction with Tidyverse*](https://press.princeton.edu/books/paperback/9780691222288/quantitative-social-science), 2022. Princeton University Press.
+- Ismay, Chester and Albert Y. Kim. 2022. [*Statistical Inference via Data Science: A ModernDive into R and the Tidyverse*](https://moderndive.com/index.html). 
+- Mine Cetinkaya-Rundel and Johanna Hardin. 2021. [*Introduction to Modern Statistics*](https://www.openintro.org/book/ims/). OpenIntro. 
+
+The following books are optional, but may be helpful to build you understanding of the material:
+
+- Freedman, David, Pisani, Robert, and Purves, Roger. 2007. *Statistics*. W.W. Norton & Company. 4th edition.
+
+
+### Computing
+
+We'll use R in this class to conduct data analysis. R is free,  open source, and available on all
+major platforms (including Solaris, so no excuses). [RStudio](http://www.rstudio.com) (also free) is a graphical interface to R that is widely used to work with the R language. You can find a virtually endless set of resources for R and RStudio on the internet. For beginners, there are several web-based tutorials. In these, you will be able to learn the basic syntax of R. 

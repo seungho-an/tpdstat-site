@@ -1,0 +1,50 @@
+﻿week,date,date_end,title, reading,content,tutorial,assignment
+0,9/1/22,,Introduction to the course,,/materials/01_intro,,
+1,9/6/22,,"R, Rstudio, and data visualization",MD Ch 1-2,/materials/02_r_data_viz,,
+1,9/7/22,,Tutorial 1,,,https://mblackwell.shinyapps.io/01-r-basics-data-viz/,
+1,9/8/22,,Data visualization,,/materials/02_r_data_viz,,
+2,9/12/22,,Tutorial 2,,,https://mblackwell.shinyapps.io/02-data-wrangling/,
+2,9/13/22,,Data wrangling,MD Ch 3,/materials/03_data_wrangling,,
+2,9/14/22,,Problem Set 1,,,,/assignments/01_hw_data_viz
+2,9/15/22,,Data wrangling,,/materials/03_data_wrangling,,
+3,9/19/22,,Tutorial 3,,,https://mblackwell.shinyapps.io/03-causality/,
+3,9/20/22,,Causal inference and randomized experiments,QSS Ch 2.1-2.5,/materials/04_causality,,
+3,9/21/22,,Problem Set 2,,,,/assignments/02_hw_data_wrangling
+3,9/22/22,,Causal inference and observational studies,,/materials/04_causality,,
+4,9/26/22,,Tutorial 4,,,https://mblackwell.shinyapps.io/04-summarizing-data/,
+4,9/27/22,,Summarizing data,QSS Ch 2.6-3.4,/materials/05_measurement,,
+4,9/28/22,,Problem Set 3,,,,/assignments/03_hw_causality
+4,9/29/22,,Survey sampling,,/materials/05_measurement,,
+5,10/3/22,,Tutorial 5,,,https://mblackwell.shinyapps.io/05-correlation-tidying/,
+5,10/4/22,,Summarizing relationships in our data,QSS Ch 3.5-3.6,/materials/06_bivariate_tidying,,
+5,10/5/22,,Problem Set 4,,,,/assignments/04_hw_summarizing
+5,10/6/22,,Importing and joining data,MD Ch 4,/materials/06_bivariate_tidying,,
+6,10/11/22,,Prediction & Iteration,QSS  4.1 (except 4.1.2),/materials/07_prediction,,
+6,10/12/22,,Tutorial 6,,,http://mblackwell.shinyapps.io/06-loops/,
+6,10/13/22,,Regression,MD Ch 5 or QSS 4.2 (except 4.2.5),/materials/07_prediction,,
+6,10/13/22,10/16/22,Exam 1,,,https://edstem.org/us/courses/24957/resources,
+7,10/18/22,,Multiple regression,MD Ch 6.1-6.2 or QSS 4.3.1-4.3.2,/materials/08_regression,,
+7,10/20/22,,Interpreting regression,,/materials/08_regression,,
+7,10/21/22,,Final Project Milestone 1,,,,assignments/distill
+8,10/24/22,,Tutorial 7,,,https://mblackwell.shinyapps.io/07-regression/,
+8,10/25/22,,Sampling,MD Ch 7,/materials/09_sampling,,
+8,10/26/22,,Problem Set 5,,,,/assignments/05_hw_regression
+8,10/27/22,,Sampling distributions,,/materials/09_sampling,,
+8,10/28/22,,Final Project Milestone 2,,,,assignments/final-project
+9,10/31/22,,Tutorial 8,,,https://mblackwell.shinyapps.io/08-bootstrap/,
+9,11/1/22,,The bootstrap and confidence intervals,MD Ch 8/IMS Ch 12,/materials/10_bootstrap,,
+9,11/2/22,,Problem Set 6,,,,/assignments/06_hw_sampling
+9,11/3/22,,The bootstrap and confidence intervals,,/materials/10_bootstrap,,
+10,11/8/22,,Hypothesis testing,MD Ch 9/IMS Ch 11,/materials/11_hyp_tests,,
+10,11/9/22,,Problem Set 7,,,,/assignments/07_hw_bootstrap
+10,11/10/22,,Hypothesis testing,,/materials/11_hyp_tests,,
+10,11/11/22,,Final Project Milestone 3,,,,assignments/final-project
+11,11/15/22,,Hypothesis testing,,/materials/12_tests_models,,
+11,11/16/22,,Problem Set 8,,,,/assignments/08_hw_hyp_tests
+11,11/17/22,,Mathematical models of uncertainty,IMS Ch 13,/materials/12_tests_models,,
+11,11/18/22,,Final Project Milestone 4,,,,assignments/final-project
+12,11/22/22,,Mathematical models of uncertainty,,/materials/13_models,,
+13,11/29/22,,Uncertainty in regression,QSS Ch 7.3,materials/14_ols_inference,,
+13,12/1/22,,Review Session with TFs,,,,
+13,12/1/22,12/4/22,Exam 2,,,,
+14,12/14/22,,Final Project due,,,,

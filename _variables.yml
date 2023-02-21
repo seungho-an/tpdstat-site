@@ -1,0 +1,27 @@
+author: Seung-Ho An
+
+instructor:
+  name: Prof. Seung-Ho An
+  name_no_title: Seung-Ho An
+  office: SS 135
+  email: seunghoan@arizona.edu
+  url: "https://www.seunghoan.com"
+  twitter: seunghoan
+  contact_policy: We will have a team chat on "Teams." If you have any questions, feel free to send me an email. I normally try to answer within 24 hours. If you don't hear from me in 48 hours, please feel free to send me a reminder. 
+
+  appointment_url: https://calendly.com/seunghoan/30min
+
+course:
+  number: "TPDstat"
+  semester: "Spring 2023"
+  days: "Wed."
+  time: "9:30–11:30 AM"
+  location: "TPD"
+  dates: "March 1st-April 26th, 2023"
+  url: "https://tpdstats23.classes.seunghoan.com"
+  copyright_year: "2023"
+
+
+university:
+  name: "University of Arizona"
+  url: "https://www.arizona.edu"
