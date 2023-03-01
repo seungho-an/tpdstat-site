@@ -2,114 +2,162 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/about.html</loc>
-    <lastmod>2023-03-01T19:03:07.421Z</lastmod>
+    <lastmod>2023-03-01T19:10:49.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/00-problem-set.html</loc>
+    <lastmod>2023-03-01T19:10:50.326Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/assignments/01_hw_data_viz.html</loc>
-    <lastmod>2023-03-01T19:03:08.373Z</lastmod>
+    <lastmod>2023-03-01T19:10:50.843Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/02_hw_data_wrangling.html</loc>
+    <lastmod>2023-03-01T19:10:51.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/03_hw_causality.html</loc>
+    <lastmod>2023-03-01T19:10:51.760Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/04_hw_summarizing.html</loc>
+    <lastmod>2023-03-01T19:10:52.171Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/05_hw_regression.html</loc>
+    <lastmod>2023-03-01T19:10:52.738Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/05_prex_draft.html</loc>
+    <lastmod>2023-03-01T19:10:53.107Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/06_hw_sampling.html</loc>
+    <lastmod>2023-03-01T19:10:53.676Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/07_hw_bootstrap.html</loc>
+    <lastmod>2023-03-01T19:10:54.223Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/08_hw_hyp_tests.html</loc>
+    <lastmod>2023-03-01T19:10:54.628Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/12_prex_wind.html</loc>
+    <lastmod>2023-03-01T19:10:55.157Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/distill.html</loc>
+    <lastmod>2023-03-01T19:10:55.640Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/assignments/final-project.html</loc>
-    <lastmod>2023-03-01T19:03:08.813Z</lastmod>
+    <lastmod>2023-03-01T19:10:55.970Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/assignments/index.html</loc>
-    <lastmod>2023-03-01T19:03:09.145Z</lastmod>
+    <lastmod>2023-03-01T19:10:56.274Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tpdstats23.classes.seunghoan.com/assignments/prex_wind.html</loc>
+    <lastmod>2023-03-01T19:10:56.815Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/assignments/problem-sets.html</loc>
-    <lastmod>2023-03-01T19:03:09.513Z</lastmod>
+    <lastmod>2023-03-01T19:10:57.146Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/assignments/tutorials.html</loc>
-    <lastmod>2023-03-01T19:03:10.065Z</lastmod>
+    <lastmod>2023-03-01T19:10:57.724Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/index.html</loc>
-    <lastmod>2023-03-01T19:03:10.429Z</lastmod>
+    <lastmod>2023-03-01T19:10:58.084Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/01_intro.html</loc>
-    <lastmod>2023-03-01T19:03:10.785Z</lastmod>
+    <lastmod>2023-03-01T19:10:58.406Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/02_data_wrangling.html</loc>
-    <lastmod>2023-03-01T19:03:11.357Z</lastmod>
+    <lastmod>2023-03-01T19:10:58.903Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/03_causality.html</loc>
-    <lastmod>2023-03-01T19:03:11.901Z</lastmod>
+    <lastmod>2023-03-01T19:10:59.399Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/04_measurement.html</loc>
-    <lastmod>2023-03-01T19:03:12.429Z</lastmod>
+    <lastmod>2023-03-01T19:10:59.886Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/05_bivariate_tidying.html</loc>
-    <lastmod>2023-03-01T19:03:12.933Z</lastmod>
+    <lastmod>2023-03-01T19:11:00.386Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/06_prediction.html</loc>
-    <lastmod>2023-03-01T19:03:13.497Z</lastmod>
+    <lastmod>2023-03-01T19:11:00.876Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/07_regression.html</loc>
-    <lastmod>2023-03-01T19:03:14.057Z</lastmod>
+    <lastmod>2023-03-01T19:11:01.350Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/08_sampling.html</loc>
-    <lastmod>2023-03-01T19:03:14.601Z</lastmod>
+    <lastmod>2023-03-01T19:11:01.826Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/09_bootstrap.html</loc>
-    <lastmod>2023-03-01T19:03:15.161Z</lastmod>
+    <lastmod>2023-03-01T19:11:02.308Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/10_hyp_tests.html</loc>
-    <lastmod>2023-03-01T19:03:15.689Z</lastmod>
+    <lastmod>2023-03-01T19:11:02.791Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/12_tests_models.html</loc>
-    <lastmod>2023-03-01T19:03:16.037Z</lastmod>
+    <lastmod>2023-03-01T19:11:03.097Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/13_models.html</loc>
-    <lastmod>2023-03-01T19:03:16.357Z</lastmod>
+    <lastmod>2023-03-01T19:11:03.405Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/14_ols_inference.html</loc>
-    <lastmod>2023-03-01T19:03:16.909Z</lastmod>
+    <lastmod>2023-03-01T19:11:03.890Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/materials/index.html</loc>
-    <lastmod>2023-03-01T19:03:17.253Z</lastmod>
+    <lastmod>2023-03-01T19:11:04.183Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/resources/cheatsheet.html</loc>
-    <lastmod>2023-03-01T19:03:17.901Z</lastmod>
+    <lastmod>2023-03-01T19:11:04.737Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/resources/index.html</loc>
-    <lastmod>2023-03-01T19:03:18.213Z</lastmod>
+    <lastmod>2023-03-01T19:11:05.044Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/resources/office-hours.html</loc>
-    <lastmod>2023-03-01T19:03:18.597Z</lastmod>
+    <lastmod>2023-03-01T19:11:05.368Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/resources/speaker-series.html</loc>
-    <lastmod>2023-03-01T19:03:18.945Z</lastmod>
+    <lastmod>2023-03-01T19:11:05.676Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/resources/study-halls.html</loc>
-    <lastmod>2023-03-01T19:03:19.337Z</lastmod>
+    <lastmod>2023-03-01T19:11:06.017Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/schedule.html</loc>
-    <lastmod>2023-03-01T19:03:20.029Z</lastmod>
+    <lastmod>2023-03-01T19:11:06.578Z</lastmod>
   </url>
   <url>
     <loc>https://tpdstats23.classes.seunghoan.com/syllabus.html</loc>
-    <lastmod>2023-03-01T19:03:20.461Z</lastmod>
+    <lastmod>2023-03-01T19:11:06.986Z</lastmod>
   </url>
 </urlset>
