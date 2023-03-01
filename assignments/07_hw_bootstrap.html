@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TPDstat - Problem Set 1: Data Visualization</title>
+<title>TPDstat - Problem Set 7: Exposure to Inequality and Support for Redistribution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,7 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Problem Set 1: Data Visualization</h1>
+      <h1 class="quarto-secondary-nav-title">Problem Set 7: Exposure to Inequality and Support for Redistribution</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -205,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/01_hw_data_viz.html" class="sidebar-item-text sidebar-link active">Problem Set 1</a>
+  <a href="../assignments/01_hw_data_viz.html" class="sidebar-item-text sidebar-link">Problem Set 1</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -235,7 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/07_hw_bootstrap.html" class="sidebar-item-text sidebar-link">Problem Set 7</a>
+  <a href="../assignments/07_hw_bootstrap.html" class="sidebar-item-text sidebar-link active">Problem Set 7</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -259,6 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
   <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
   <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   </ul>
 </nav>
     </div>
@@ -267,7 +268,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Problem Set 1: Data Visualization</h1>
+<h1 class="title d-none d-lg-block">Problem Set 7: Exposure to Inequality and Support for Redistribution</h1>
 </div>
 
 
@@ -282,11 +283,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<!-- You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets.qmd). -->
-<!-- You can find the GitHub Classroom link to download the template repository on the [Ed Board](https://edstem.org/us/courses/24957/resources) -->
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>In this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using <code>ggplot</code>. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.</p>
+<p>Does exposure to inequality affect our support for redistributive policies such as taxes on higher income earners? A recent paper explored the effect of brief exposure to socioeconomic inequality in an everyday setting on support for a millionaire’s tax. This exercise is based on:</p>
+<blockquote class="blockquote">
+<p>Sands, Melissa L. 2017. “<a href="http://dx.doi.org/10.1073/pnas.1615010113">Exposure to inequality affects redistribution.</a>” <em>Proceedings of the National Academy of Sciences</em>, 114(4): 663-668.</p>
+</blockquote>
+<p>In this experiment, the author hired actors to stand in affluent, predominantly white, commercial areas around Boston, MA that have high pedestrian traffic. These actors were either white or Black, and each actor dressed in attire that indicated either affluence (well-dressed, well-groomed) or poverty (unkempt, shabby clothing). The author randomly assigned shifts to each actor with randomly chosen attire to stand on a city street within 20 feet of a petitioner hired by the researcher. This petitioner would stop every third adult that walked past the actor and ask them to sign a petition for the millionaire’s tax (a measure in MA to impose an additional tax of 4% on individuals with annual incomes of $1 million or more) or to sign a petition about reducing the use of plastic bags in local stores. The type of petition was randomly assigned as well. The outcome of interest is whether the respondent agreed to sign the petition on the millionaire’s tax (the plastic bag petition is used as a placebo).</p>
+<p>A total of 2,591 respondents were petitioned with 1,335 being petitioned about the millionaire’s tax. Petitioners also collected their “best guess” about the gender, age, and race/ethnicity of each person approached. The data file for this study is <code>inequality-exposure.csv</code> and contains the following variables:</p>
 <table class="table">
 <colgroup>
 <col style="width: 15%">
@@ -300,87 +304,113 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>country</code></td>
-<td style="text-align: left;">name of the country</td>
+<td style="text-align: left;"><code>signed</code></td>
+<td style="text-align: left;">1 if the respondent signed the petition, 0 otherwise</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>continent</code></td>
-<td style="text-align: left;">name of the country’s continent</td>
+<td style="text-align: left;"><code>mill_tax</code></td>
+<td style="text-align: left;">1 if petitioned about the millionaire’s tax, 0 for plastic bag petition.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>year</code></td>
-<td style="text-align: left;">year of the measurement, ranging from 1952 to 2007 in 5-year increments</td>
+<td style="text-align: left;"><code>blackactor</code></td>
+<td style="text-align: left;">1 if actor was Black for this respondent, 0 for white</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>lifeExp</code></td>
-<td style="text-align: left;">life expectancy at birth, in years</td>
+<td style="text-align: left;"><code>pooractor</code></td>
+<td style="text-align: left;">1 if actor was in poverty condition, 0 for affluent condition</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>pop</code></td>
-<td style="text-align: left;">population</td>
+<td style="text-align: left;"><code>black</code></td>
+<td style="text-align: left;">1 if petitioner guessed respondent was Black</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>gdpPercap</code></td>
-<td style="text-align: left;">GDP per capita (US dollars, inflation-adjusted)</td>
+<td style="text-align: left;"><code>white</code></td>
+<td style="text-align: left;">1 if petitioner guessed respondent was non-Hispanic white</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>asian</code></td>
+<td style="text-align: left;">1 if petitioner guessed respondent was Asian</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>hisp</code></td>
+<td style="text-align: left;">1 if petitioner guessed respondent was Hispanic</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>young</code></td>
+<td style="text-align: left;">1 if petitioner guessed respondent was 18-35 years old</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>middle</code></td>
+<td style="text-align: left;">1 if petitioner guessed respondent was 36-65 years old</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>old</code></td>
+<td style="text-align: left;">1 if petitioner guessed respondent was &gt;65 years old</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>female</code></td>
+<td style="text-align: left;">1 if petitioner guessed respondent was female</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>clust</code></td>
+<td style="text-align: left;">Cluster number of respondent (see question 6)</td>
 </tr>
 </tbody>
 </table>
-<p><!-- **NOTE**: In the template you'll get from GitHub Classroom, the default settings for chunks is to only show the output of the chunk, not the code that generated it (`echo = FALSE`). This is to give your answers a clean look and to highlight the output rather than the source coe. The template also has a part that will dump all of the R code at the end so that we can look at it if needed.  --></p>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>Make sure that you load the <code>gapminder</code> and <code>tidyverse</code> packages in the setup chunk (right after the header). For this question, use the <code>glimpse</code> function to show basic information about the <code>gapminder</code> dataset. In the main text (that is, outside of a code chunk), tell us how many rows and columns there are in the data set and which of the variables are factors.</p>
-<p><!-- **Rubric**: 2 write-up points for using the glimpse function; 2 points for reporting the dimension of the data; 1 point for identifying factors.  --></p>
+<p>Load the data into R and name it <code>ineq</code>. Create a tibble called <code>mill_df</code> that is filtered to respondents petitioned about the millionaire’s tax. We will use this data throughout the exercise. Create two new variables:</p>
+<ul>
+<li><code>costume</code> that is <code>"Poor"</code> when <code>pooractor</code> is 1 and <code>"Affluent"</code> otherwise</li>
+<li><code>race_actor</code> that is <code>"Black"</code> when <code>blackactor</code> is 1 and <code>"White"</code> otherwise</li>
+</ul>
+<p>Calculate the following object, saving it with the names indicated:</p>
+<ul>
+<li><code>ineq_diff</code>: The difference in means in petition signing (<code>signed</code>) between seeing the actor in the poor and affluent conditions (<code>costume</code>) for those who were petitioned about the millionaire’s tax. This should be a 1x1 tibble.</li>
+</ul>
+<p>Report this values in the text of your write up and briefly interpret it.</p>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>Let’s investigate how life expectancy varies across the continents. Using <code>ggplot</code>, we want you to recreate the following figure:</p>
-<p><img src="figures/life_exp_boxplot.png" class="img-fluid"></p>
-<p>These are boxplots of the distribution of life expectancy in each continent. Please make sure that you include the labels as shown in this figure. For the autograder to be able to process your plot, you should assign your the output of your <code>ggplot</code> call to <code>plot_q2</code> and then evaluate <code>plot_q2</code> to ensure that the plot is produced in the output. That is, your code should look like this:</p>
+<p>In the first line of the code chunk for this question use the following code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plot_q2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="sc">&lt;</span>arguments<span class="sc">&gt;</span>) <span class="sc">+</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  geom_<span class="sc">&lt;</span>type<span class="sc">&gt;</span>(<span class="sc">&lt;</span>arguments<span class="sc">&gt;</span>) <span class="sc">+</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  ...</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>plot_q2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">02138</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- plot_q2 <- ggplot(data = gapminder, aes(x = continent, y = lifeExp)) + -->
-<!--   geom_boxplot() +   labs(x = "Continent", y = "Life expectancy at birth in years") -->
-<!-- plot_q2 -->
-<p><!-- **Rubric**: 10 autograder points.  --></p>
+<p>Generate 1,000 bootstrap replications of the estimated ATE from Question 1 and save these bootstraps in a tibble called <code>ate_boots</code>. You may use the <code>rep_slice_sample()</code> or <code>specify/generate</code> approach, but the column of bootstrapped ATEs should either be called <code>ATE</code> or <code>stat</code>.</p>
+<p>Use these bootstraps to calculate a 95% confidence interval for the difference in means using the percentile method and save this as <code>ate_ci_95</code>, which should be a 1 by 2 tibble.</p>
+<p>Use <code>ggplot()</code>, <code>geom_histogram()</code> to plot the bootstrap distribution and overlay it with the confidence interval using this geom:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">unlist</span>(ate_ci_95))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will be manually graded in the PDF so be sure it shows up in the PDF. Use informative labels.</p>
+<p>In the writeup, discuss if the CI contains zero? What does that mean?</p>
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
-<p>Looking at the previous plot, which continent has the highest median life expectancy? Which part of the boxplot can we determine this from?</p>
-<p><!-- **Rubric**: 5 write up points (2 for identifying the correct continent, 3 for correctly identifying how to find this on the boxplot) --> <!-- Oceania, the black cross line in the box --></p>
+<p>Explain how to interpret 95% confidence intervals in terms of repeated sampling. Is it possible to produce a 100% confidence interval in this setting? If so, what is it and is it useful?</p>
 </section>
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>The previous boxplot groups all the years together into one boxplot, but what if we want to understand how life expectancy is changing over time? Next, we will recreate the following plot:</p>
-<p><img src="figures/life_exp_facet.png" class="img-fluid"></p>
-<p>The plot shows each country’s life expectancy trajectory over time, broken out by continent with smoothed average lines overlayed for each continent. To get started, we’ll give you a few clues about what we’ve done here:</p>
-<ul>
-<li>The lines for each country use the color <code>"gray70"</code>.</li>
-<li>The size of the smoothed line is 1.1 and the method used is the loess smoother. We also have turned off the standard errors.</li>
-<li>Make sure that the facets are all on one row. Look at the <a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html"><code>facet_wrap</code></a> documentation if need help with this.</li>
-<li>Make sure that the labels are correctly specified.</li>
-<li>Use the chunk options <code>fig.width = 11</code> and <code>fig.height = 4</code> to shrink the font size so the year labels will not overlap (this is for Rmarkdown).</li>
-</ul>
-<p>Finally, assign the output of your <code>ggplot</code> call to <code>plot_q4</code> and then evaluate <code>plot_q4</code> (similarly to what you did in Question 2).</p>
-<!-- ```{r fig.width=11, fig.height=4} -->
-<!-- plot_q4 <- ggplot(data = gapminder, -->
-<!--                   mapping = aes(x = year, -->
-<!--                                 y = lifeExp)) + -->
-<!--   geom_smooth(aes(group = continent), size=1.1, method = "loess", se = FALSE) + -->
-<!--   geom_line(aes(group = country), color="gray70", alpha = 0.5) + -->
-<!--   labs(y="Life expectancy at birth in years", -->
-<!--   x="Year", title="Life expectancy on Five Continent over Time", caption="Gapminders") -->
-<!-- plot_q4 + facet_wrap(~ continent, ncol=5) -->
-<!-- ``` -->
+<p>Calculate the ATE for Black and White actors separately (using the <code>race_actor</code> variable) and calculate the interaction or difference between these two ATEs. The output should be a 1 row tibble named <code>ate_race</code> with columns <code>ATE_Black</code>, <code>ATE_White</code>, and <code>ATE_Diff</code> that are the ATE for Black actors, White actors and the difference between them, respectively.</p>
+<p>In the write-up, report the interaction and describe what it means in the substance of this experiment.</p>
+</section>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<p>In the first line of the code chunk for this question use the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">02138</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Use <code>rep_slice_sample</code> (not <code>specify/generate</code>) to generate 1000 boostrap replications of the difference in ATEs between Black and White actors from Question 4. Save this tibble as <code>ate_race_boots</code>.</p>
+<p>Then construct a 95% confidence interval for the difference between the ATE for black Actors and the ATE for White actors and save this confidence intervals as <code>ate_race_ci_95</code>.</p>
+<p>Use <code>ggplot()</code>, <code>geom_histogram()</code> to plot the bootstrap distribution and overlay it with the confidence interval using this geom:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">unlist</span>(ate_race_ci_95))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will be manually graded in the PDF so be sure it shows up in the PDF. Use informative labels.</p>
+<p>In the writeup, discuss if the CI contains zero? What does that mean?</p>
 
 
 </section>

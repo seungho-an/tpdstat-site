@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TPDstat - Problem Set 1: Data Visualization</title>
+<title>TPDstat - Problem Set 6: Sampling from a Voter File</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,7 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Problem Set 1: Data Visualization</h1>
+      <h1 class="quarto-secondary-nav-title">Problem Set 6: Sampling from a Voter File</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -205,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/01_hw_data_viz.html" class="sidebar-item-text sidebar-link active">Problem Set 1</a>
+  <a href="../assignments/01_hw_data_viz.html" class="sidebar-item-text sidebar-link">Problem Set 1</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -230,7 +230,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/06_hw_sampling.html" class="sidebar-item-text sidebar-link">Problem Set 6</a>
+  <a href="../assignments/06_hw_sampling.html" class="sidebar-item-text sidebar-link active">Problem Set 6</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -255,10 +255,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
-  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
-  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
-  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
-  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-1-7-points" id="toc-question-1-7-points" class="nav-link" data-scroll-target="#question-1-7-points">Question 1 (7 points)</a></li>
+  <li><a href="#question-2-5-points" id="toc-question-2-5-points" class="nav-link" data-scroll-target="#question-2-5-points">Question 2 (5 points)</a></li>
+  <li><a href="#question-3-8-points" id="toc-question-3-8-points" class="nav-link" data-scroll-target="#question-3-8-points">Question 3 (8 points)</a></li>
+  <li><a href="#question-4-7-points" id="toc-question-4-7-points" class="nav-link" data-scroll-target="#question-4-7-points">Question 4 (7 points)</a></li>
+  <li><a href="#question-6-5-points" id="toc-question-6-5-points" class="nav-link" data-scroll-target="#question-6-5-points">Question 6 (5 points)</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   </ul>
 </nav>
     </div>
@@ -267,7 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Problem Set 1: Data Visualization</h1>
+<h1 class="title d-none d-lg-block">Problem Set 6: Sampling from a Voter File</h1>
 </div>
 
 
@@ -282,105 +284,113 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<!-- You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets.qmd). -->
-<!-- You can find the GitHub Classroom link to download the template repository on the [Ed Board](https://edstem.org/us/courses/24957/resources) -->
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>In this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using <code>ggplot</code>. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.</p>
+<p>In this exercise, we will focus on sampling and sampling distributions when we have access to an entire census for a given population. In this case, the <code>data/fulton.csv</code> file contains anonymized data on all registered voters in Fulton County, GA from 1994. The variables in this dataset are:</p>
 <table class="table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
+<th>Name</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>country</code></td>
-<td style="text-align: left;">name of the country</td>
+<td><code>turnout</code></td>
+<td>did person vote (1) or not (0) in 1994?</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>continent</code></td>
-<td style="text-align: left;">name of the country’s continent</td>
+<td><code>black</code></td>
+<td>is this person black (1) or not (0)?</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>year</code></td>
-<td style="text-align: left;">year of the measurement, ranging from 1952 to 2007 in 5-year increments</td>
+<td><code>sex</code></td>
+<td>is this person a woman (1) or not (0)?</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>lifeExp</code></td>
-<td style="text-align: left;">life expectancy at birth, in years</td>
+<td><code>age</code></td>
+<td>age of registered voter</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>pop</code></td>
-<td style="text-align: left;">population</td>
+<td><code>dem</code></td>
+<td>registered as a Democrat (1) or not (0)?</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>gdpPercap</code></td>
-<td style="text-align: left;">GDP per capita (US dollars, inflation-adjusted)</td>
+<td><code>rep</code></td>
+<td>registered as a Republican (1) or not (0)?</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td><code>urban</code></td>
+<td>registered in a city (1) or not (0)?</td>
 </tr>
 </tbody>
 </table>
-<p><!-- **NOTE**: In the template you'll get from GitHub Classroom, the default settings for chunks is to only show the output of the chunk, not the code that generated it (`echo = FALSE`). This is to give your answers a clean look and to highlight the output rather than the source coe. The template also has a part that will dump all of the R code at the end so that we can look at it if needed.  --></p>
+<p>For the purposed of this exercise, we will treat this data as the population of interest. Doing so is an increasingly common approach for polling, where pollsters are now using the voter file as a sampling frame to conduct their polls. We will repeated sample from this population to better understand sampling uncertainty.</p>
+<p><strong>Note:</strong> please follow the directions carefully about setting the seed for the sampling based questions.</p>
+<div style="page-break-after: always;"></div>
 </section>
-<section id="question-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>Make sure that you load the <code>gapminder</code> and <code>tidyverse</code> packages in the setup chunk (right after the header). For this question, use the <code>glimpse</code> function to show basic information about the <code>gapminder</code> dataset. In the main text (that is, outside of a code chunk), tell us how many rows and columns there are in the data set and which of the variables are factors.</p>
-<p><!-- **Rubric**: 2 write-up points for using the glimpse function; 2 points for reporting the dimension of the data; 1 point for identifying factors.  --></p>
+<section id="question-1-7-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-7-points">Question 1 (7 points)</h2>
+<p>Load the voter list data into R using <code>read_csv</code> and save the data as <code>fulton</code>.</p>
+<p>Create a density histogram of age with a bin width of 1 and save this plot as <code>age_hist</code> (use the aesthetic mapping <code>y = ..density..</code> in to accomplish this). Create a barplot for turnout with the proportion on the y-axis (use the aesthetic mapping <code>y = ..prop..</code> in <code>geom_barplot</code> to achieve this). Make sure both of these plots are shown in the PDF.</p>
+<p>In the write-up, state how many units are in the population (that is, how many rows are in the <code>fulton</code> data).</p>
 </section>
-<section id="question-2" class="level2">
-<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>Let’s investigate how life expectancy varies across the continents. Using <code>ggplot</code>, we want you to recreate the following figure:</p>
-<p><img src="figures/life_exp_boxplot.png" class="img-fluid"></p>
-<p>These are boxplots of the distribution of life expectancy in each continent. Please make sure that you include the labels as shown in this figure. For the autograder to be able to process your plot, you should assign your the output of your <code>ggplot</code> call to <code>plot_q2</code> and then evaluate <code>plot_q2</code> to ensure that the plot is produced in the output. That is, your code should look like this:</p>
+<section id="question-2-5-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-5-points">Question 2 (5 points)</h2>
+<p>Use <code>summarize()</code> to calculate the population mean and standard deviation of <code>age</code> and <code>turnout</code> (that is the mean and SD of these variables in the <code>fulton</code> data) and save the resulting tibble as <code>pop_parameters</code> with the tibble output looking like:</p>
+<pre><code># A tibble: 1 × 4
+  age_pop_mean age_pop_sd turnout_pop_prop turnout_pop_sd
+         &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;          &lt;dbl&gt;
+1         XX.X       XX.X            X.XXX          X.XXX</code></pre>
+<p>Make sure that the column names are the same for the autograder. (<strong>Hint:</strong> you can summarize multiple variables in the same call to <code>summarize</code>.) Use <code>knitr::kable()</code> to present the values in nicely formatted table with <code>digits = 2</code> to create nicely rounded numbers and informative column names (they may need to be abbreviated to fit on the page).</p>
+<p><strong>Rubric:</strong> 4pts for correct <code>pop_parameters</code> tibble (autograder); 1pts for nicely formatted table (PDF).</p>
+</section>
+<section id="question-3-8-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-8-points">Question 3 (8 points)</h2>
+<p>In the first line of the code chunk for this question use the following code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plot_q2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="sc">&lt;</span>arguments<span class="sc">&gt;</span>) <span class="sc">+</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  geom_<span class="sc">&lt;</span>type<span class="sc">&gt;</span>(<span class="sc">&lt;</span>arguments<span class="sc">&gt;</span>) <span class="sc">+</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  ...</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>plot_q2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">02138</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- plot_q2 <- ggplot(data = gapminder, aes(x = continent, y = lifeExp)) + -->
-<!--   geom_boxplot() +   labs(x = "Continent", y = "Life expectancy at birth in years") -->
-<!-- plot_q2 -->
-<p><!-- **Rubric**: 10 autograder points.  --></p>
+<p>Then use <code>rep_slice_sample()</code> to take 1,000 samples of size 20 from <code>fulton</code> and calculate the sample mean of <code>age</code> and the sample mean/proportion of turnout for each of these samples. Save these as variables named <code>age_mean</code> and <code>turnout_prop</code> and save the resulting tibble as <code>samples_n20</code>.</p>
+<p>Create a density histogram of the age means and with a bin width of 1 and save this as <code>age_mean_hist</code>. Create a density histogram of the turnout proportions and save this as <code>turnout_prop_hist</code>. Make sure both of these plots are shown in the PDF and that they have informative labels.</p>
+<p>In the write-up, compare the sampling distribution of the sample mean and sample proportion here to the population distributions from question 1. Are the shapes of the sampling distributions similar or different to the population distributions? If different, how are they different?</p>
 </section>
-<section id="question-3" class="level2">
-<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
-<p>Looking at the previous plot, which continent has the highest median life expectancy? Which part of the boxplot can we determine this from?</p>
-<p><!-- **Rubric**: 5 write up points (2 for identifying the correct continent, 3 for correctly identifying how to find this on the boxplot) --> <!-- Oceania, the black cross line in the box --></p>
+<section id="question-4-7-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-4-7-points">Question 4 (7 points)</h2>
+<p>Use the <code>summarize()</code> function on <code>samples_n20</code> to calculate the average (named <code>ev_age</code> and <code>ev_turnout</code>) and standard deviation (named <code>se_age</code> and <code>se_turnout</code>) of each sample mean/proportion across the repeated samples. Save this tibble as <code>samp_dist_summary</code> and it should look like this:</p>
+<pre><code># A tibble: 1 × 4
+  ev_age se_age ev_turnout se_turnout
+   &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1   X.XX   X.XX      X.XXX      X.XXX</code></pre>
+<p>Make sure that the column names are the same for the autograder. Use <code>knitr::kable()</code> to present the values in nicely formatted table with <code>digits = 2</code> to create nicely rounded numbers.</p>
+<p>Compare the mean and SD of these sampling distributions to the population means and SDs from the previous question. Are these distributions centered on the same value? Which has more spread, the population distribution of age/turnout or the sampling distributions of their means? ## Question 5 (3 points)</p>
+<p>The central limit theorem says that sums and means tend to be normally distributed so that 68% of the sampling distribution of the mean should be within 1 standard deviation of the expected value of the expected value. Let’s see if this if this approximation is good for our sampling distributions.</p>
+<p>Use <code>mutate</code> to create a new variable in <code>samples_n20</code> called <code>age_error</code> that is the absolute value of the difference between <code>age_mean</code> and the average of the <code>age_mean</code>. Then create a variable called <code>within_1sd_age</code> that is <code>TRUE</code> is this absolute difference is less than or equal to the standard deviation of <code>age_mean</code>. Finally, take the mean of this variable to obtain the proportion of sample means that are within one SD of the mean of their distribution. Save the resulting 1x1 tibble as <code>age_clt_n20</code>.</p>
+<p>To get you started, you can calculate the absolute value of the difference between a variable <code>x</code> and its mean using the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">error =</span> <span class="fu">abs</span>(x <span class="sc">-</span> <span class="fu">mean</span>(x))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Report this proportion in the main text and comment on whether it is similar to what the CLT would predict.</p>
 </section>
-<section id="question-4" class="level2">
-<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>The previous boxplot groups all the years together into one boxplot, but what if we want to understand how life expectancy is changing over time? Next, we will recreate the following plot:</p>
-<p><img src="figures/life_exp_facet.png" class="img-fluid"></p>
-<p>The plot shows each country’s life expectancy trajectory over time, broken out by continent with smoothed average lines overlayed for each continent. To get started, we’ll give you a few clues about what we’ve done here:</p>
-<ul>
-<li>The lines for each country use the color <code>"gray70"</code>.</li>
-<li>The size of the smoothed line is 1.1 and the method used is the loess smoother. We also have turned off the standard errors.</li>
-<li>Make sure that the facets are all on one row. Look at the <a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html"><code>facet_wrap</code></a> documentation if need help with this.</li>
-<li>Make sure that the labels are correctly specified.</li>
-<li>Use the chunk options <code>fig.width = 11</code> and <code>fig.height = 4</code> to shrink the font size so the year labels will not overlap (this is for Rmarkdown).</li>
-</ul>
-<p>Finally, assign the output of your <code>ggplot</code> call to <code>plot_q4</code> and then evaluate <code>plot_q4</code> (similarly to what you did in Question 2).</p>
-<!-- ```{r fig.width=11, fig.height=4} -->
-<!-- plot_q4 <- ggplot(data = gapminder, -->
-<!--                   mapping = aes(x = year, -->
-<!--                                 y = lifeExp)) + -->
-<!--   geom_smooth(aes(group = continent), size=1.1, method = "loess", se = FALSE) + -->
-<!--   geom_line(aes(group = country), color="gray70", alpha = 0.5) + -->
-<!--   labs(y="Life expectancy at birth in years", -->
-<!--   x="Year", title="Life expectancy on Five Continent over Time", caption="Gapminders") -->
-<!-- plot_q4 + facet_wrap(~ continent, ncol=5) -->
-<!-- ``` -->
+<section id="question-6-5-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-6-5-points">Question 6 (5 points)</h2>
+<p>In this question you will repeat the exercise from question 4, using <code>turnout_prop</code> instead.</p>
+<p>Use <code>mutate</code> to create a new variable in <code>samples_n20</code> called <code>turnout_error</code> that is the absolute value of the difference between <code>turnout_prop</code> and the average of the <code>turnout_prop</code>. Then create a variable called <code>within_1sd_turnout</code> that is <code>TRUE</code> is this absolute difference is less than or equal to the standard deviation of <code>turnout_prop</code>. Finally, take the mean of this variable to obtain the proportion of sample means that are within one SD of the mean of their distribution. Save the resulting 1x1 tibble as <code>turnout_clt_n20</code>.</p>
+<p>Report this proportion in the main text and comment on whether it is similar to what the CLT would predict. If this is different than age, can you think of anything about the two variables that differ that might cause the CLT approximation to be better for one than the other?</p>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<p><strong>This problem is optional.</strong></p>
+<p>Write the following line at the beginning of the code chunk for this problem:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">02138</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then create a tibble called <code>samples_n200</code> that replicates the exercise the sampling of question 3 but with 1,000 samples of size 200. With this tibble replicate the analysis of questions 4 and 5 to get the proportion of sample means/proportions <code>age_mean</code> and <code>turnout_prop</code> that are within 1 SD of the means of those distributions. You can save the resulting 1x1 tibbles for age as <code>age_clt_n200</code> and for turnout as <code>turnout_clt_n200</code>.</p>
+<p>In the write-up, report these values and answer the following questions. Does the normal approximation seem better here than with a sample size of 20? Which variable sees more improvement in the approximation?</p>
 
 
 </section>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TPDstat - Problem Set 1: Data Visualization</title>
+<title>TPDstat - Problem Set 3: Data Wrangling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,7 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Problem Set 1: Data Visualization</h1>
+      <h1 class="quarto-secondary-nav-title">Problem Set 3: Data Wrangling</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -205,12 +205,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/01_hw_data_viz.html" class="sidebar-item-text sidebar-link active">Problem Set 1</a>
+  <a href="../assignments/01_hw_data_viz.html" class="sidebar-item-text sidebar-link">Problem Set 1</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/02_hw_data_wrangling.html" class="sidebar-item-text sidebar-link">Problem Set 2</a>
+  <a href="../assignments/02_hw_data_wrangling.html" class="sidebar-item-text sidebar-link active">Problem Set 2</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -257,8 +257,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
   <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
-  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
-  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-3-7-points" id="toc-question-3-7-points" class="nav-link" data-scroll-target="#question-3-7-points">Question 3 (7 points)</a></li>
+  <li><a href="#question-4-13-points" id="toc-question-4-13-points" class="nav-link" data-scroll-target="#question-4-13-points">Question 4 (13 points)</a></li>
   </ul>
 </nav>
     </div>
@@ -267,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Problem Set 1: Data Visualization</h1>
+<h1 class="title d-none d-lg-block">Problem Set 3: Data Wrangling</h1>
 </div>
 
 
@@ -282,15 +282,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<!-- You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets.qmd). -->
-<!-- You can find the GitHub Classroom link to download the template repository on the [Ed Board](https://edstem.org/us/courses/24957/resources) -->
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>In this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using <code>ggplot</code>. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.</p>
+<p>Political advertising has traditionally been focused on the medium of television, but in recent cycles, online advertising has become much more popular. In this problem set, you will explore a dataset that has information on Facebook ad spending by candidates in the 2018 election cycle in the United States. The variables in this data are described below.</p>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 22%">
+<col style="width: 77%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -300,87 +298,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>country</code></td>
-<td style="text-align: left;">name of the country</td>
+<td style="text-align: left;"><code>cand_id</code></td>
+<td style="text-align: left;">unique identifier code for candidate</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>continent</code></td>
-<td style="text-align: left;">name of the country’s continent</td>
+<td style="text-align: left;"><code>cand_name</code></td>
+<td style="text-align: left;">full name of the candidate</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>year</code></td>
-<td style="text-align: left;">year of the measurement, ranging from 1952 to 2007 in 5-year increments</td>
+<td style="text-align: left;"><code>cand_name_last</code></td>
+<td style="text-align: left;">last name of the candidate</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>lifeExp</code></td>
-<td style="text-align: left;">life expectancy at birth, in years</td>
+<td style="text-align: left;"><code>party</code></td>
+<td style="text-align: left;">party affiliation of the candidate (R = Republican, D = Democrat)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>pop</code></td>
-<td style="text-align: left;">population</td>
+<td style="text-align: left;"><code>office</code></td>
+<td style="text-align: left;">office being sought by candidate</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>gdpPercap</code></td>
-<td style="text-align: left;">GDP per capita (US dollars, inflation-adjusted)</td>
+<td style="text-align: left;"><code>state</code></td>
+<td style="text-align: left;">state in which the candidate is running</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>incumbency</code></td>
+<td style="text-align: left;">incumbency status of candidate (incumbent, challenger, or open seat)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>spend</code></td>
+<td style="text-align: left;">estimated total spending on Facebook ads by candidate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>impressions</code></td>
+<td style="text-align: left;">estimated total impressions of Facebook ads</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ad_tone_attack</code></td>
+<td style="text-align: left;">proportion of FB ads that mention candidate’s opponent only</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ad_tone_promote</code></td>
+<td style="text-align: left;">proportion of FB ads that mention candidate only</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ad_tone_contrast</code></td>
+<td style="text-align: left;">proportion of FB ads that mention candidate and candidate’s opponent</td>
 </tr>
 </tbody>
 </table>
-<p><!-- **NOTE**: In the template you'll get from GitHub Classroom, the default settings for chunks is to only show the output of the chunk, not the code that generated it (`echo = FALSE`). This is to give your answers a clean look and to highlight the output rather than the source coe. The template also has a part that will dump all of the R code at the end so that we can look at it if needed.  --></p>
 </section>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>Make sure that you load the <code>gapminder</code> and <code>tidyverse</code> packages in the setup chunk (right after the header). For this question, use the <code>glimpse</code> function to show basic information about the <code>gapminder</code> dataset. In the main text (that is, outside of a code chunk), tell us how many rows and columns there are in the data set and which of the variables are factors.</p>
-<p><!-- **Rubric**: 2 write-up points for using the glimpse function; 2 points for reporting the dimension of the data; 1 point for identifying factors.  --></p>
+<p>Load the data using the <code>read_csv</code> function and save it as <code>fb_ads</code> (using this will automatically make <code>fb_ads</code> a tibble). In the text, describe how many candidates there are in the dataset.</p>
+<p>Use <code>dplyr</code> functions to create a table with the number of candidates in each type of office in the data set. Save this table output as <code>office_table</code> (for the autograder). Use the function <code>knitr::kable()</code> on this table to have a nicely formatted table produced in the knitted output.</p>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<p>Let’s investigate how life expectancy varies across the continents. Using <code>ggplot</code>, we want you to recreate the following figure:</p>
-<p><img src="figures/life_exp_boxplot.png" class="img-fluid"></p>
-<p>These are boxplots of the distribution of life expectancy in each continent. Please make sure that you include the labels as shown in this figure. For the autograder to be able to process your plot, you should assign your the output of your <code>ggplot</code> call to <code>plot_q2</code> and then evaluate <code>plot_q2</code> to ensure that the plot is produced in the output. That is, your code should look like this:</p>
+<p>Filter the data to just US House and US Senate races and use this to create a tibble called <code>office_incumbent_attack</code> that has 6 rows that summarizes the average of <code>ad_tone_attack</code> for each combination of <code>office</code> and <code>incumbent</code>. Call the variable summarizing the attack variable as <code>attack_prop</code> and be sure to remove any missing values when computing the averages.</p>
+<p>Use <code>knitr::kable()</code> to produce a nicely formatted table. In this call, set the <code>digits</code> arguments to 3 and use the <code>col.names</code> argument to pass a nicer set of names. You can use the following as a template:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plot_q2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="sc">&lt;</span>arguments<span class="sc">&gt;</span>) <span class="sc">+</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  geom_<span class="sc">&lt;</span>type<span class="sc">&gt;</span>(<span class="sc">&lt;</span>arguments<span class="sc">&gt;</span>) <span class="sc">+</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  ...</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>plot_q2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(my_table, <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Variable 1"</span>, <span class="st">"Variable 2"</span>, ...))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- plot_q2 <- ggplot(data = gapminder, aes(x = continent, y = lifeExp)) + -->
-<!--   geom_boxplot() +   labs(x = "Continent", y = "Life expectancy at birth in years") -->
-<!-- plot_q2 -->
-<p><!-- **Rubric**: 10 autograder points.  --></p>
+<p>In the writeup, describe which type of candidate sponsored the most attack ads on average.</p>
 </section>
-<section id="question-3" class="level2">
-<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
-<p>Looking at the previous plot, which continent has the highest median life expectancy? Which part of the boxplot can we determine this from?</p>
-<p><!-- **Rubric**: 5 write up points (2 for identifying the correct continent, 3 for correctly identifying how to find this on the boxplot) --> <!-- Oceania, the black cross line in the box --></p>
+<section id="question-3-7-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-7-points">Question 3 (7 points)</h2>
+<p>Create a new variable called <code>spend_millions</code> that is the amount of money the candidate spent on Facebook ads in millions of dollars (as opposed to dollars). Make sure to save the resulting dataset back as <code>fb_ads</code>.</p>
+<p>Create a histogram of this variable for just the US Senate races. Save the ggplot output as <code>plot_q3</code> and also print it to produce a plot in the output. In the text, describe the shape of the histogram and tell the reader if most of the Senate candidates spent more or less than a million dollars on Facebook ads.</p>
 </section>
-<section id="question-4" class="level2">
-<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
-<p>The previous boxplot groups all the years together into one boxplot, but what if we want to understand how life expectancy is changing over time? Next, we will recreate the following plot:</p>
-<p><img src="figures/life_exp_facet.png" class="img-fluid"></p>
-<p>The plot shows each country’s life expectancy trajectory over time, broken out by continent with smoothed average lines overlayed for each continent. To get started, we’ll give you a few clues about what we’ve done here:</p>
+<section id="question-4-13-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-4-13-points">Question 4 (13 points)</h2>
+<p>Let’s now recreate the following plot that shows the top 20 Senate candidates in terms of Facebook ad spending.</p>
+<p><img src="figures/senate-spenders.png" class="img-fluid" style="width:50.0%"></p>
+<p>You should save the <code>ggplot</code> output as <code>fb_top_plot</code>. The key features of this graph that you should replicate for the autograder are:</p>
 <ul>
-<li>The lines for each country use the color <code>"gray70"</code>.</li>
-<li>The size of the smoothed line is 1.1 and the method used is the loess smoother. We also have turned off the standard errors.</li>
-<li>Make sure that the facets are all on one row. Look at the <a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html"><code>facet_wrap</code></a> documentation if need help with this.</li>
-<li>Make sure that the labels are correctly specified.</li>
-<li>Use the chunk options <code>fig.width = 11</code> and <code>fig.height = 4</code> to shrink the font size so the year labels will not overlap (this is for Rmarkdown).</li>
+<li>The barplot should have candidate last names on the y-axis and the <code>spend_millions</code> variable from question 3 on the x-axis.</li>
+<li>The data feeding into the <code>ggplot</code> call should only have US Senate candidates and only the candidates with the highest 20 <code>spend_millions</code> values.</li>
+<li>The y-axis should be ordered in ascending values of <code>spend_millions</code> so that the lowest values are at the bottom. You may want to manipulate <code>cand_name_last</code> to achieve this.</li>
+<li>The fill color of the bar plot should be mapped to the <code>party</code> variable (but not globally!).</li>
 </ul>
-<p>Finally, assign the output of your <code>ggplot</code> call to <code>plot_q4</code> and then evaluate <code>plot_q4</code> (similarly to what you did in Question 2).</p>
-<!-- ```{r fig.width=11, fig.height=4} -->
-<!-- plot_q4 <- ggplot(data = gapminder, -->
-<!--                   mapping = aes(x = year, -->
-<!--                                 y = lifeExp)) + -->
-<!--   geom_smooth(aes(group = continent), size=1.1, method = "loess", se = FALSE) + -->
-<!--   geom_line(aes(group = country), color="gray70", alpha = 0.5) + -->
-<!--   labs(y="Life expectancy at birth in years", -->
-<!--   x="Year", title="Life expectancy on Five Continent over Time", caption="Gapminders") -->
-<!-- plot_q4 + facet_wrap(~ continent, ncol=5) -->
-<!-- ``` -->
+<p>You do not need to exactly match the labels, but you should have informative labels. The color does not need to match, but if you want to change the fill colors, you can use the <code>scale_fill_manual(values = c(R = "red", D = "blue"))</code> function (where you can change the red and blue to whatever you want).</p>
 
 
 </section>

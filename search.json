@@ -7,6 +7,27 @@
     "text": "About this site"
   },
   {
+    "objectID": "assignments/00-problem-set.html",
+    "href": "assignments/00-problem-set.html",
+    "title": "Getting Started with R, R Studio",
+    "section": "",
+    "text": "In this problem set, we’re going to get R, RStudio, and R Markdown set up on your computer. To get started, follow these steps:\n\nDownload and install the most recent version of R. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the R-x.y.z-win.exe file where x.y.z is a version number. On a Mac, you will want to install using the R-x.y.z.pkg file that is notarized and signed.\nWith R installed, download and install RStudio. RStudio is a type of “integrated development environment” or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free.\nInstall the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the “Console” in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type “no”. Note that the symbols next to my_package are a less than sign < followed by a minus sign - with no space between them. (Don’t be worried if you see some red text here. Those are usually just messages telling you information about the packages you are installing. Unless you see the word Error you should be fine.)\n\n\nmy_packages <- c(\"tidyverse\", \"usethis\", \"devtools\", \"learnr\",\n                 \"tinytex\", \"gitcreds\")\ninstall.packages(my_packages, repos = \"http://cran.rstudio.com\")\nremotes::install_github(\"kosukeimai/qss-package\", build_vignettes = TRUE)\n\n\nFor some things in the course, we’ll need produce PDFs from R and that requires something called LaTeX. If you’ve never heard of that, it’s completely fine and you should just run the following two lines of R code:\n\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX"
+  },
+  {
+    "objectID": "assignments/00-problem-set.html#installing-and-configuring-git",
+    "href": "assignments/00-problem-set.html#installing-and-configuring-git",
+    "title": "Getting Started with R, R Studio",
+    "section": "Installing and configuring git",
+    "text": "Installing and configuring git\nGit is a version control program that helps organize the process of writing and maintaining code. It allows you to maintain a history of edits to your code without having to resort to a set of files like:\nmy_code.R\nmy_code_v1.R\nmy_code_v2_FINAL.R\nThere’s a lot to git and it will be harder to use in the beginning, but in the long term there are huge benefits of it. First, when you use git, you are much less likely to encounter a devastating data failure. All of your (committed) changes to your project are preserved, even when you make new changes or you revert old changes.\nGit is also a very useful way for people to collaborate. There is a huge community built up around it. And once your projects are publicly available on Github (a website for hosting git repositories), there are a host of ways that folks can collaborate with you.\n\nInstall git\nYou might already have git installed on your computer, especially if you have a Mac. To check, in RStudio, click on the Terminal tab in the bottom-left panel (next to the Console tab). Type git --version at the command prompt. If you get a response with a version number, great you are all set. If you get any kind of error message, you learn how to install git on your machine here.\n\n\nSetup a GitHub account\nNext, you can setup a GitHub account. You can think of GitHub as similar to Dropbox or Google Drive for your git projects (“repositories”) where everything is public by default. Since you might use this account to interact with potential employers in the future, you should probably pick a professional username.\nOnce you have a GitHub account, you can configure your local git program to interact with your account gracefully. Run the following two lines of code in the Terminal replacing \"John Harvard\" with your name and \"john@harvard.edu\" with your email address used to sign up for GitHub.\ngit config --global user.name \"John Harvard\"\ngit config --global user.email \"john@harvard.edu\"\n\n\nSet up RStudio to talk to GitHub\nWe also need to set up RStudio to be able to communicate with GitHub securely. This requires a bit of fidily configuration that we luckily only have to do once. Basically, we need to get a secret code from GitHub and store it in RStudio (kind of like a app-specific password when you’re using two-factor authentication). We can start the process from by doing:\n\nusethis::create_github_token()\n\nThis will open a page on GitHub asking you to create a “Personal Access Token” or PAT (this is the secret code). You’ll have to give the PAT a note that describes what it’s for and choose an expiration date. You can accept the default of 30 days but you will have to renew it a couple of times during the class. Alternatively, if you set it to a date after the semester ends, you shouldn’t have to touch this again. We recommend keeping the “scope” selections as they are and clicking the “Generate Token” button at the bottom of the page.\n\nYou will then see a new screen with a long sequence of letters. This is your token or secret code. You should treat it like a password and do not share it with anyone. If you use a password manager like 1Password or LastPass, you can put it in a secure note in those programs. Copy this by hitting the button with the two boxes.\n\nOnce you have copied the PAT, call gitcreds::gitcreds_set() from the RStudio console and paste the PAT when prompted. You should see the following:\n> gitcreds::gitcreds_set()\n? Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n-> Adding new credentials...\n-> Removing credentials from cache...\n-> Done.\nOnce this is done, you should be all set for RStudio to communicate with GitHub. If you have any problems with the PAT process or want to know more about it, the Happy Git and GitHub for the useR book has a great chapter about it.\n\n\nCreating your first repo\nOnce you are logged into Github and at its homepage, you can now create a new repo (shorthand for “repository”). These repositories are like folders in Dropbox except a bit more structured. Create one by clicking on the green “New” button in the top-left of the screen next to “Repositories.” It should look like this:\n\nNow a new screen should pop up requesting some information for the new repo. Give this new Repository the name gov50-problem-set0 and set it to be a private repository. You can give it an informative description and check the “Initialize this repository with a README” checkbox. This latter option will add a README to the repository where you can add more information that will display nicely in the repository’s homepage. Your setup should look something like this:\n\nOnce you create your repo, you are ready to connect it to RStudio on your local computer. The easiest way to do this is go to the repo homepage (you’re already there if you’ve just created it) and click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).\n\nNow, switch to RStudio. Go to the menu bar and hit “File > New Project”. You can then choose what type of project to start. Since we’re importing from Github, we’ll use the “Version Control” option (it’s the bottom of the list). In the next menu, choose “Git”. Now, you can paste the URL in the “Repository URL” box. Choose a set of local directories to place this project and hit “Create Project”. And now you’ll have your project ready to go in RStudio."
+  },
+  {
+    "objectID": "assignments/00-problem-set.html#working-with-a-project-in-rstudio",
+    "href": "assignments/00-problem-set.html#working-with-a-project-in-rstudio",
+    "title": "Getting Started with R, R Studio",
+    "section": "Working with a project in RStudio",
+    "text": "Working with a project in RStudio\nYou’ll see in the bottom right window of RStudio you’ll now see the files from your Github project.\n\nLet’s edit the README file by clicking on README.md in that file pane and you’ll be able to edit it in the top-left pane. Change the header from # gov-50-problem-set0 to # Introduction and save the file (⌘+S or Ctrl+S). If you click on the “Git” tab in the top right panel, you will a list of the changes you’ve made to the repo since the last commit (you can think of a commit as a more permanent type of saving work to the git repo).\n\nOne thing you’ll notice here is that git thinks that gov50-problem-set0.Rproj is a file that maybe should go into the repo. But this file is just for our local copy of RStudio and shouldn’t really go into the repo. To prevent git from bothering us about it every time we open something, we can modify the .gitignore file to tell git to ignore certain files. Open .gitignore and add a new line with *.Rproj on it to tell git to ignore any file with the extension .Rproj. Make sure to save the file.\n\nIf you go back to the Git tab in the top right and refresh (little circular arrow in the top right corner), you see that gov50-problem-set0.Rproj is removed from our list. Now we are ready to commit our changes. Click the “Staged” box for .gitignore and README.md and hit the “Commit” button just above the file list. You’ll see a window with the changes that you are about to commit.\n\nYou can click on different files to see what exactly you are changing. Add a short but informative commit message that describes what you are committing and hit “Commit”. Once this completes, you can hit the “Push” button in the top right to push that commit back to Github.\n\nIf you go back to your repo’s homepage on Github and refresh the page, you’ll see the updates to your README file and the new .gitignore.\n\nAnd you’re done! You’ve just created your first repo."
+  },
+  {
     "objectID": "assignments/01_hw_data_viz.html",
     "href": "assignments/01_hw_data_viz.html",
     "title": "Problem Set 1: Data Visualization",
@@ -40,6 +61,321 @@
     "title": "Problem Set 1: Data Visualization",
     "section": "Question 4",
     "text": "Question 4\nThe previous boxplot groups all the years together into one boxplot, but what if we want to understand how life expectancy is changing over time? Next, we will recreate the following plot:\n\nThe plot shows each country’s life expectancy trajectory over time, broken out by continent with smoothed average lines overlayed for each continent. To get started, we’ll give you a few clues about what we’ve done here:\n\nThe lines for each country use the color \"gray70\".\nThe size of the smoothed line is 1.1 and the method used is the loess smoother. We also have turned off the standard errors.\nMake sure that the facets are all on one row. Look at the facet_wrap documentation if need help with this.\nMake sure that the labels are correctly specified.\nUse the chunk options fig.width = 11 and fig.height = 4 to shrink the font size so the year labels will not overlap (this is for Rmarkdown).\n\nFinally, assign the output of your ggplot call to plot_q4 and then evaluate plot_q4 (similarly to what you did in Question 2)."
+  },
+  {
+    "objectID": "assignments/02_hw_data_wrangling.html",
+    "href": "assignments/02_hw_data_wrangling.html",
+    "title": "Problem Set 3: Data Wrangling",
+    "section": "",
+    "text": "Political advertising has traditionally been focused on the medium of television, but in recent cycles, online advertising has become much more popular. In this problem set, you will explore a dataset that has information on Facebook ad spending by candidates in the 2018 election cycle in the United States. The variables in this data are described below.\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncand_id\nunique identifier code for candidate\n\n\ncand_name\nfull name of the candidate\n\n\ncand_name_last\nlast name of the candidate\n\n\nparty\nparty affiliation of the candidate (R = Republican, D = Democrat)\n\n\noffice\noffice being sought by candidate\n\n\nstate\nstate in which the candidate is running\n\n\nincumbency\nincumbency status of candidate (incumbent, challenger, or open seat)\n\n\nspend\nestimated total spending on Facebook ads by candidate\n\n\nimpressions\nestimated total impressions of Facebook ads\n\n\nad_tone_attack\nproportion of FB ads that mention candidate’s opponent only\n\n\nad_tone_promote\nproportion of FB ads that mention candidate only\n\n\nad_tone_contrast\nproportion of FB ads that mention candidate and candidate’s opponent"
+  },
+  {
+    "objectID": "assignments/02_hw_data_wrangling.html#question-1",
+    "href": "assignments/02_hw_data_wrangling.html#question-1",
+    "title": "Problem Set 3: Data Wrangling",
+    "section": "Question 1",
+    "text": "Question 1\nLoad the data using the read_csv function and save it as fb_ads (using this will automatically make fb_ads a tibble). In the text, describe how many candidates there are in the dataset.\nUse dplyr functions to create a table with the number of candidates in each type of office in the data set. Save this table output as office_table (for the autograder). Use the function knitr::kable() on this table to have a nicely formatted table produced in the knitted output."
+  },
+  {
+    "objectID": "assignments/02_hw_data_wrangling.html#question-2",
+    "href": "assignments/02_hw_data_wrangling.html#question-2",
+    "title": "Problem Set 3: Data Wrangling",
+    "section": "Question 2",
+    "text": "Question 2\nFilter the data to just US House and US Senate races and use this to create a tibble called office_incumbent_attack that has 6 rows that summarizes the average of ad_tone_attack for each combination of office and incumbent. Call the variable summarizing the attack variable as attack_prop and be sure to remove any missing values when computing the averages.\nUse knitr::kable() to produce a nicely formatted table. In this call, set the digits arguments to 3 and use the col.names argument to pass a nicer set of names. You can use the following as a template:\n\nknitr::kable(my_table, col.names = c(\"Variable 1\", \"Variable 2\", ...))\n\nIn the writeup, describe which type of candidate sponsored the most attack ads on average."
+  },
+  {
+    "objectID": "assignments/02_hw_data_wrangling.html#question-3-7-points",
+    "href": "assignments/02_hw_data_wrangling.html#question-3-7-points",
+    "title": "Problem Set 3: Data Wrangling",
+    "section": "Question 3 (7 points)",
+    "text": "Question 3 (7 points)\nCreate a new variable called spend_millions that is the amount of money the candidate spent on Facebook ads in millions of dollars (as opposed to dollars). Make sure to save the resulting dataset back as fb_ads.\nCreate a histogram of this variable for just the US Senate races. Save the ggplot output as plot_q3 and also print it to produce a plot in the output. In the text, describe the shape of the histogram and tell the reader if most of the Senate candidates spent more or less than a million dollars on Facebook ads."
+  },
+  {
+    "objectID": "assignments/02_hw_data_wrangling.html#question-4-13-points",
+    "href": "assignments/02_hw_data_wrangling.html#question-4-13-points",
+    "title": "Problem Set 3: Data Wrangling",
+    "section": "Question 4 (13 points)",
+    "text": "Question 4 (13 points)\nLet’s now recreate the following plot that shows the top 20 Senate candidates in terms of Facebook ad spending.\n\nYou should save the ggplot output as fb_top_plot. The key features of this graph that you should replicate for the autograder are:\n\nThe barplot should have candidate last names on the y-axis and the spend_millions variable from question 3 on the x-axis.\nThe data feeding into the ggplot call should only have US Senate candidates and only the candidates with the highest 20 spend_millions values.\nThe y-axis should be ordered in ascending values of spend_millions so that the lowest values are at the bottom. You may want to manipulate cand_name_last to achieve this.\nThe fill color of the bar plot should be mapped to the party variable (but not globally!).\n\nYou do not need to exactly match the labels, but you should have informative labels. The color does not need to match, but if you want to change the fill colors, you can use the scale_fill_manual(values = c(R = \"red\", D = \"blue\")) function (where you can change the red and blue to whatever you want)."
+  },
+  {
+    "objectID": "assignments/03_hw_causality.html",
+    "href": "assignments/03_hw_causality.html",
+    "title": "Problem Set 3: Effect of Demographic Change on Exclusionary Attitudes",
+    "section": "",
+    "text": "Ryan Enos conducted a randomized field experiment assessing the extent to which exposure to demographic change affected the political views of individuals living in suburban communities around Boston, Massachusetts.\n\nThis exercise is based on: Enos, R. D. 2014. “Causal Effect of Intergroup Contact on Exclusionary Attitudes.” Proceedings of the National Academy of Sciences 111(10): 3699–3704.\n\nSubjects in the experiment were individuals riding on the commuter rail line and overwhelmingly white. Every morning, multiple trains pass through various stations in suburban communities that were used for this study. For pairs of trains leaving the same station at roughly the same time, one was randomly assigned to receive the treatment and one was designated as a control. By doing so all the benefits of randomization apply for this dataset.\nThe treatment in this experiment was the presence of two native Spanish-speaking ‘confederates’ (a term used in experiments to indicate that these individuals worked for the researcher, unbeknownst to the subjects) on the platform each morning prior to the train’s arrival. The presence of these confederates, who would appear as Hispanic foreigners to the subjects, was intended to simulate the kind of demographic change anticipated for the United States in coming years. For those individuals in the control group, no such confederates were present on the platform. The treatment was administered for 10 days. Participants were asked questions related to immigration policy both before the experiment started and after the experiment had ended. The names and descriptions of variables in the data set boston.csv are:\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nage\nAge of individual at time of experiment\n\n\nmale\nSex of individual, male (1) or female (0)\n\n\nincome\nIncome group in dollars (not exact income)\n\n\nwhite\nIndicator variable for whether individual identifies as white (1) or not (0)\n\n\ncollege\nIndicator variable for whether individual attended college (1) or not (0)\n\n\nusborn\nIndicator variable for whether individual was born in the US (1) or not (0)\n\n\ntreatment\nIndicator variable for whether an individual was treated (1) or not (0)\n\n\nideology\nSelf-placement on ideology spectrum from Very Liberal (1) through Moderate (3) to Very Conservative (5)\n\n\nnumberim.pre\nPolicy opinion on question about increasing the number immigrants allowed in the country from Increased (1) to Decreased (5)\n\n\nnumberim.post\nSame question as above, asked later\n\n\nremain.pre\nPolicy opinion on question about allowing the children of undocumented immigrants to remain in the country from Allow (1) to Not Allow (5)\n\n\nremain.post\nSame question as above, asked later\n\n\nenglish.pre\nPolicy opinion on question about passing a law establishing English as the official language from Not Favor (1) to Favor (5)\n\n\nenglish.post\nSame question as above, asked later"
+  },
+  {
+    "objectID": "assignments/03_hw_causality.html#question-1",
+    "href": "assignments/03_hw_causality.html#question-1",
+    "title": "Problem Set 3: Effect of Demographic Change on Exclusionary Attitudes",
+    "section": "Question 1",
+    "text": "Question 1\nThe benefit of randomly assigning individuals to the treatment or control groups is that the two groups should be similar, on average, in terms of their covariates. This is referred to as ‘covariate balance.’\nLoad the tidyverse package in the setup chunk. Read the data \"data/boston.csv\" into R using read_csv and call the resulting tibble trains. Using the group_by and summarize functions, create a tibble called balance_table that shows the sample average of the age and male variables by whether participants were in the treatment or control groups.\nThen use the knitr::kable() function to create a nice-looking table, including some informative column names. Briefly comment on the whether you think these variables appear balanced."
+  },
+  {
+    "objectID": "assignments/03_hw_causality.html#question-2",
+    "href": "assignments/03_hw_causality.html#question-2",
+    "title": "Problem Set 3: Effect of Demographic Change on Exclusionary Attitudes",
+    "section": "Question 2",
+    "text": "Question 2\nIndividuals in the experiment were asked a series of questions both at the beginning and the end of the experiment. One such question was “Do you think the number of immigrants from Mexico who are permitted to come to the United States to live should be increased, left the same, or decreased?”\nThe response to this question prior to the experiment is in the variable numberim.pre. The response to this question after the experiment is in the variable numberim.post. In both cases the variable is coded on a 1 – 5 scale. Responses with values of 1 are inclusionary (‘pro-immigration’) and responses with values of 5 are exclusionary (‘anti-immigration’). Take the following steps:\n\nCreate a new variable in the trains data called change and define it as the change in immigration attitudes between pre- and post-experiment (post minus pre). Be sure to assign the output of your data wrangling call back to trains.\nCalculate the average change in attitudes about immigration in the treated group and save this output as trt_change. This should be a 1 x 1 tibble.\nCalculate the average change in attitudes about immigration in the control group and save this output as ctr_change. This should be a 1 x 1 tibble.\nCompute the average treatment effect from these two objects and store it as ate. This should be a 1 x 1 tibble.\n\nReport these estimates in the main text (that is, outside the chunk) and describe what they mean substantively with respect to the study."
+  },
+  {
+    "objectID": "assignments/03_hw_causality.html#question-3",
+    "href": "assignments/03_hw_causality.html#question-3",
+    "title": "Problem Set 3: Effect of Demographic Change on Exclusionary Attitudes",
+    "section": "Question 3",
+    "text": "Question 3\nDescribe, in words, what the potential outcomes for a particular person are in the analysis for the last problem. Substantively, what does the fundamental problem of causal inference refer to in this context? Make sure to refer to what treatment and control means in this experiment rather than just mention the “treatment” and “control” groups."
+  },
+  {
+    "objectID": "assignments/03_hw_causality.html#question-4",
+    "href": "assignments/03_hw_causality.html#question-4",
+    "title": "Problem Set 3: Effect of Demographic Change on Exclusionary Attitudes",
+    "section": "Question 4",
+    "text": "Question 4\nIn your data science group, two members have alternative ideas for what the outcome should have been instead of the change in attitudes on immigration between the beginning and end of the experiment. Jimmy Q. Boxplot thinks that you should have used numberim.pre as the outcome and Suzy T. Histogram thinks that you should have used numberim.post. Are either of these two valid and interesting outcomes to explore in this study? Briefly explain why or why not."
+  },
+  {
+    "objectID": "assignments/03_hw_causality.html#question-5",
+    "href": "assignments/03_hw_causality.html#question-5",
+    "title": "Problem Set 3: Effect of Demographic Change on Exclusionary Attitudes",
+    "section": "Question 5",
+    "text": "Question 5\nDoes having attended college influence the effect of being exposed to ‘outsiders’ on exclusionary attitudes? Another way to ask the same question is this: is there evidence of a differential impact of treatment, conditional on attending college versus not attending college?\nUse group_by, summarize, pivot_wider, and mutate to create a tibble called ate_college where each row corresponds to a unique value of the college variable (so two rows total) and that has the following four columns:\n\ncollege: the unique value of the college variable for this row, labelled as either “College Grad” or “Non-College Grad”.\nTreated: the mean of the change variable for each unique value of college in the treated group.\nControl: the mean of the change variable for each unique value of college in the control group.\nATE: the difference between the treatment and control means for this value of college.\n\nIn the first step of building ate_college, you should pipe the data to a mutate() call that (a) modifies the treatment to be \"Treated\" when treatment == 1 and \"Control\" when treatment == 0 and (b) modifies the college variable to be \"College Grad\" when college == 1 and \"Non-College Grad\" when college == 0. When you do this, be sure not to overwrite the trains data with these changes, simply pipe this to the next step.\nPass the table to knitr::kable() to produce a nicely formatted table. Report the ATEs in text and comment on whether or not you see evidence of a differential effect of treatment."
+  },
+  {
+    "objectID": "assignments/03_hw_causality.html#question-6-10-points",
+    "href": "assignments/03_hw_causality.html#question-6-10-points",
+    "title": "Problem Set 3: Effect of Demographic Change on Exclusionary Attitudes",
+    "section": "Question 6 (10 points)",
+    "text": "Question 6 (10 points)\nRepeat the same analysis as in the previous question but this time with respect to age. For age, use case_when and logical vectors to create a new variable age_group that has the following values:\n\n\"25 and under\" when age is 25 and under,\n\"26 - 40\" when age is between 26-40,\n\"41 - 60\" when age is between 41-60, and\n\"Over 60\" when age is 61 and over.\n\nRemember to save the output to the trains name. Use this variable along with the approach in the previous question to create a tibble called ate_age (replacing college with age_group) that has four rows corresponding to the four unique values of age_group and four columns: age_group, Treated, Control, and ATE (all defined similarly to the previous question).\nUse the the ate_age tibble to produce a barplot (using ggplot) of the ATE for each age group and assigning the plot to the name age_plot. Be sure to include informative labels for the x and y axes, along with a title.\nIn the text, answer these question: Do there appear to be systematic relationships between the treatment effects and age? If so, what patterns do you see?"
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html",
+    "href": "assignments/04_hw_summarizing.html",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "",
+    "text": "In this problem set, we will analyze the relationship between the gender composition among a judge’s children and voting behavior among circuit court judges. Adam N. Glynn and Maya Sen argue that having a female child causes circuit court judges to make more pro-feminist decisions. The paper can be found at:\n\nGlynn, Adam N., and Maya Sen. (2015). “Identifying Judicial Empathy: Does Having Daughters Cause Judges to Rule for Women’s Issues?.” American Journal of Political Science Vol. 59, No. 1, pp. 37–54.\n\nThe dataset judges.csv contains the following variables about individual judges:\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nname\nThe judge’s name\n\n\nnum_kids\nThe number of children each judge has.\n\n\ncircuit\nWhich federal circuit the judge serves in.\n\n\ngirls\nThe number of female children the judge has.\n\n\nprogressive_vote\nThe proportion of the judge’s votes on women’s issues which were decided in a pro-feminist direction.\n\n\nrace\nThe judge’s race (1 = white, 2 = African-American, 3 = Hispanic, 4 = Asian-American).\n\n\nreligion\nThe judge’s religion (1 = Unitarian, 2 = Episcopalian, 3 = Baptist, 4 = Catholic, 5 = Jewish, 7 = Presbyterian, 8 = Protestant, 9 = Congregationalist, 10 = Methodist, 11 = Church of Christ, 16 = Baha’i, 17 = Mormon, 21 = Anglican, 24 = Lutheran, 99 = unknown).\n\n\nrepublican\nTakes a value of 1 if the judge was appointed by a Republican president, 0 otherwise. Used as a proxy for the judge’s party.\n\n\nsons\nThe number of male children the judge has.\n\n\nwoman\nTakes a value of 1 if the judge is a woman, 0 otherwise.\n\n\nyearb\nThe year the judge was born."
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-1-10-points",
+    "href": "assignments/04_hw_summarizing.html#question-1-10-points",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 1 (10 points)",
+    "text": "Question 1 (10 points)\nLoad the tidyverse package in the setup chunk. In the first chunk for this question use read_csv to load the data/judges.csv file into a data frame called judges. In this exercise, you will create a cross-tab that shows the gender breakdown within each party. In particular, the result should be a table with 2 rows and 3 columns, where the rows represent each gender and the columns correspond to party. In the end, you should have a table that looks like this (with the correct proportion, not these made up ones):\n\n\n\nGender\nDemocrat\nRepublican\n\n\n\n\nMan\n0.5\n0.6\n\n\nWoman\n0.5\n0.4\n\n\n\nNote that the columns here sum to 1. You can create this using the following data wrangling steps:\n\nOverwrite the judges tibble with the same tibble with two newly created variables: one variable called Gender variable to be labelled \"Woman\" and \"Man\" based on the variable woman and another variable called Party to be labelled \"Republican\" and \"Democrat\" based on the republican variable.\nUse the judges tibble to create the cross-tab and save it as gender_party_table. It should have 2 rows and 3 columns (“Gender”, “Republican”, and “Democrat”). Be very careful about the ordering of your grouping and remember that summarize() drops the last group by default when there is more than one group. You should use group_by(), summarize(), mutate(), and pivot_wider() to accomplish this. (Hint: if you are ending up with the wrong number of rows, make sure that the only variables in the tibble when you try to use pivot_wider are the two grouping variables and the proportion variable.)\nPass gender_party_table to knitr::kable() to create a nicely formatted version of this table.\n\nIn your write-up, answer the following questions:\n\nHow many judges are in this data set?\nWhat proportion of the judges are men? (hint: use mean)\nFrom your table, is the gender breakdown different for judges appointed by Democratic vs Republican presidents?"
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-2-7-points",
+    "href": "assignments/04_hw_summarizing.html#question-2-7-points",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 2 (7 points)",
+    "text": "Question 2 (7 points)\nUse group_by and summarize to calculate the mean of progressive_vote in each combination of the Gender and Party variables you created in question 1 and save this tibble as gender_party_means (this tibble should have columns Gender, Party, and progressive_vote). Use this table to recreate the following barplot:\n\nThe autograder will check the aesthetic mappings, the correct placement of the bars, and the labels, but you do not need to match the exact colors (they are \"steeblue1\" and \"indianred1\" if you do want to match, though).\nIn the main text, briefly interpret the results of the analysis by describing which party and which gender tend to be more progress. Comment on whether there are larger differences across party or across gender in terms of progressive voting. Should we interpret any of these effects causally? Why or why not?"
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-3-9-points",
+    "href": "assignments/04_hw_summarizing.html#question-3-9-points",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 3 (9 points)",
+    "text": "Question 3 (9 points)\nWhat is the difference in the proportion of pro-feminist decisions between judges who have at least one daughter and those who do not have any? To compute this difference, first create a variable called any_girls that is \"Any Girls\" when the judge has at least 1 girl and \"No Girls\" otherwise and save this variable back to the judges tibble. Then, created a new tibble called parents that is filtered to contain judges that have at least one child. Create an object called vote_by_girls that has three columns: the unique values of the any_girls variable, the mean of the progressive_vote variable for each value of any_girls (column called progressive_mean), and the standard deviation of progressive_vote for each value of any_girls (column called progressive_sd). Present the table using knitr::kable().\nIn the main text, describe which group has a higher average progressive vote and which group’s distribution has more spread. Why might we worry about interpreting any difference in means causally, considering number of children as a possible confounder?"
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-4-9-points",
+    "href": "assignments/04_hw_summarizing.html#question-4-9-points",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 4 (9 points)",
+    "text": "Question 4 (9 points)\nGiven that the number of children might be a confounder for the relationship between number of girls and voting, let’s estimate the average treatment effects of having girls using statistical control for the number of children among judges that have one to three children (that is, first filter to judges that only have between 1 and 3 children, inclusive). Your final table should be called ate_nkids and should be a tibble that has two columns: one with the number of children (1, 2, and 3) and the other with the estimated ATEs of any_girls for each of those levels. Print out this table using the knitr::kable() command.\nAre these estimated effects largely similar or largely different than what you found using all of the data? What assumption do you need to make to interpret these effects causally? Do you think it is plausible in this case?"
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-5",
+    "href": "assignments/04_hw_summarizing.html#question-5",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 5",
+    "text": "Question 5\nThis problem is optional.\nLet’s consider the design of this study. The original authors assume that, conditional on the number of children a judge has, the number of daughters is random (as we did in the previous question). If this is true, half of a judge’s children should be female, on average. A deviation from this proportion could indicate that a gender preference among judges due a stopping rule such as “have children until we get one girl,” which would violate the randomization assumption.\nTo check this assumption, group the data by the number of children and calculate the proportion of children in each group that are girls. Create a barplot that these proportions on the y-axis with the number of children on the x-axis. This barplot should have (a) informative labels on each axis, (b) a y-axis range that runs from 0 to 1, and (c) a horizontal line at 0.5 to compare against. Does it appear that there is strong gender preference/selection happening among judges?"
+  },
+  {
+    "objectID": "assignments/05_hw_regression.html",
+    "href": "assignments/05_hw_regression.html",
+    "title": "Problem Set 5: Co-ethnic Candidates and Voter Turnout",
+    "section": "",
+    "text": "For this problem set, we will analyze data from the following article:\nFraga, Bernard. (2015) “Candidates or Districts? Reevaluating the Role of Race in Voter Turnout,” American Journal of Political Science, Vol. 60, No. 1, pp. 97–122.\nFraga assesses the theory that minority voters are more likely to vote in elections featuring co-ethnic candidates. He shows that the association between minority voter turnout and co-ethnic candidates disappears once we take into account district-level racial composition. In particular, he demonstrates that in districts where Black people make up a greater share of the voting-age population, Black voters in that district are more likely to vote in elections regardless of candidate race. Although the main analyses he carries out are a bit more complicated than what have learned in the course, we can replicate his substantive findings using the multiple regression approach we’ve learned.\nA description of the variables is listed below:\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nyear\nYear the election was held\n\n\nstate\nState in which the election was held\n\n\ndistrict\nDistrict in which the election was held (unique within state but not across states)\n\n\nturnout\nThe proportion of the Black voting-age population in a district that votes in the general election\n\n\nCVAP\nThe proportion of a district’s voting-age population that is Black\n\n\ncandidate\nBinary variable coded “1” when the election includes a Black candidate; “0” when the election does not include a Black candidate"
+  },
+  {
+    "objectID": "assignments/05_hw_regression.html#question-1-3-points",
+    "href": "assignments/05_hw_regression.html#question-1-3-points",
+    "title": "Problem Set 5: Co-ethnic Candidates and Voter Turnout",
+    "section": "Question 1 (3 points)",
+    "text": "Question 1 (3 points)\nFraga analyzes turnout data for four different racial and ethnic groups, but for this analysis we will focus on the data for Black voters. Load data/blackturnout.csv and save it as blackturnout.\nIn the write up, indicate which years are included in the dataset and how many different states are included in the dataset.\nRubric: 1pt for Rmd file compiling (autograder); 1pt for loading data (autograder); 1pt for indicating years in the data and number of states (PDF)."
+  },
+  {
+    "objectID": "assignments/05_hw_regression.html#question-2-7-points",
+    "href": "assignments/05_hw_regression.html#question-2-7-points",
+    "title": "Problem Set 5: Co-ethnic Candidates and Voter Turnout",
+    "section": "Question 2 (7 points)",
+    "text": "Question 2 (7 points)\nCreate a boxplot that compares Black turnout in elections with and without a co-ethnic candidate and save the plot as turnout_box. Your plot should look like this:\n\nTo create the x-axis variable that is nicely labeled, use mutate() to create a variable that is \"Yes\" when candidate is 1 and \"No\" otherwise (it does not matter what this variable is called to the autograder, but don’t overwrite your candidate variable!). Be sure to use informative labels, though they do not have to match the text exactly.\nIn the write-up, report what the plot tells us about how turnout varies by the presence of a co-ethnic candidate."
+  },
+  {
+    "objectID": "assignments/05_hw_regression.html#question-3-7-points",
+    "href": "assignments/05_hw_regression.html#question-3-7-points",
+    "title": "Problem Set 5: Co-ethnic Candidates and Voter Turnout",
+    "section": "Question 3 (7 points)",
+    "text": "Question 3 (7 points)\nRun a linear regression with Black voter turnout as your outcome variable and candidate co-ethnicity as your predictor. Save this regression as fit_1 and report the coefficients using a nicely formatted table with the following code (you may need to install the broom package to have this work):\n\nfit_1 |>\n  broom::tidy() |>\n  select(term, estimate) |>  \n  knitr::kable(digits = 2)\n\nInterpret both of these coefficients. Do not merely comment on the direction of the association (i.e., whether the slope is positive or negative). Explain what the value of the coefficients mean in terms of the units in which each variable is measured. Are these results consistent with the prediction that Black voters turn out at higher rates when a co-ethnic candidate is running?"
+  },
+  {
+    "objectID": "assignments/05_hw_regression.html#question-4-7-points",
+    "href": "assignments/05_hw_regression.html#question-4-7-points",
+    "title": "Problem Set 5: Co-ethnic Candidates and Voter Turnout",
+    "section": "Question 4 (7 points)",
+    "text": "Question 4 (7 points)\nYou decide to investigate the results of the previous question a bit more carefully because the elections with co-ethnic candidates may differ from the elections without co-ethnic candidates in other ways. Create a scatter plot where the x-axis is the proportion of voting-age population that is Black and the y-axis is Black voter turnout. Color your points according to candidate co-ethnicity. That is, make the points for elections featuring co-ethnic candidates one color, and make the points for elections featuring no co-ethnic candidates a different color. You plot should look like this:\n\nYou should save this plot as turnout_scatter and to create better labels for the color of the points, use mutate() in a similar way to question 2.\nAnswer these questions in the write-up: What does this graph seem to imply about the relationship between Black voting-age population and Black turnout? What does it tell us about the relationship between Black voting-age population and the presence of a Black candidate?"
+  },
+  {
+    "objectID": "assignments/05_hw_regression.html#question-5-6-points",
+    "href": "assignments/05_hw_regression.html#question-5-6-points",
+    "title": "Problem Set 5: Co-ethnic Candidates and Voter Turnout",
+    "section": "Question 5 (6 points)",
+    "text": "Question 5 (6 points)\nRun a linear regression with Black turnout as your outcome variable and with candidate co-ethnicity and co-ethnic voting-age population as your predictors. Save the output of this regression as fit_2 and report the coefficients using a nicely formatted table with the following code (you may need to install the broom package to have this work):\n\nfit_2 |>\n  broom::tidy() |>\n  select(term, estimate) |>  \n  knitr::kable(digits = 2)\n\nIn the main text, interpret the coefficients on the two predictors, ignoring the intercept for now (you will interpret the intercept in the next question). Explain what each coefficient represents in terms of the units of the relevant variables."
+  },
+  {
+    "objectID": "assignments/05_hw_regression.html#question-6-2-points",
+    "href": "assignments/05_hw_regression.html#question-6-2-points",
+    "title": "Problem Set 5: Co-ethnic Candidates and Voter Turnout",
+    "section": "Question 6 (2 points)",
+    "text": "Question 6 (2 points)\nNow interpret the intercept from the regression model with two predictors. Is this intercept a substantively important or interesting quantity? Why or why not?"
+  },
+  {
+    "objectID": "assignments/05_hw_regression.html#question-7-3-points",
+    "href": "assignments/05_hw_regression.html#question-7-3-points",
+    "title": "Problem Set 5: Co-ethnic Candidates and Voter Turnout",
+    "section": "Question 7 (3 points)",
+    "text": "Question 7 (3 points)\nComparing the two regression models you have fit, what do you conclude about the relationship between co-ethnic candidates and Black voter turnout? Do they come to similar or different conclusions about this relationship? Which model do you prefer and why? (Please ignore issues of statistical significance for this question given that it will be covered later in the course.)"
+  },
+  {
+    "objectID": "assignments/06_hw_sampling.html",
+    "href": "assignments/06_hw_sampling.html",
+    "title": "Problem Set 6: Sampling from a Voter File",
+    "section": "",
+    "text": "In this exercise, we will focus on sampling and sampling distributions when we have access to an entire census for a given population. In this case, the data/fulton.csv file contains anonymized data on all registered voters in Fulton County, GA from 1994. The variables in this dataset are:\n\n\n\nName\nDescription\n\n\n\n\nturnout\ndid person vote (1) or not (0) in 1994?\n\n\nblack\nis this person black (1) or not (0)?\n\n\nsex\nis this person a woman (1) or not (0)?\n\n\nage\nage of registered voter\n\n\ndem\nregistered as a Democrat (1) or not (0)?\n\n\nrep\nregistered as a Republican (1) or not (0)?\n\n\nurban\nregistered in a city (1) or not (0)?\n\n\n\nFor the purposed of this exercise, we will treat this data as the population of interest. Doing so is an increasingly common approach for polling, where pollsters are now using the voter file as a sampling frame to conduct their polls. We will repeated sample from this population to better understand sampling uncertainty.\nNote: please follow the directions carefully about setting the seed for the sampling based questions."
+  },
+  {
+    "objectID": "assignments/06_hw_sampling.html#question-1-7-points",
+    "href": "assignments/06_hw_sampling.html#question-1-7-points",
+    "title": "Problem Set 6: Sampling from a Voter File",
+    "section": "Question 1 (7 points)",
+    "text": "Question 1 (7 points)\nLoad the voter list data into R using read_csv and save the data as fulton.\nCreate a density histogram of age with a bin width of 1 and save this plot as age_hist (use the aesthetic mapping y = ..density.. in to accomplish this). Create a barplot for turnout with the proportion on the y-axis (use the aesthetic mapping y = ..prop.. in geom_barplot to achieve this). Make sure both of these plots are shown in the PDF.\nIn the write-up, state how many units are in the population (that is, how many rows are in the fulton data)."
+  },
+  {
+    "objectID": "assignments/06_hw_sampling.html#question-2-5-points",
+    "href": "assignments/06_hw_sampling.html#question-2-5-points",
+    "title": "Problem Set 6: Sampling from a Voter File",
+    "section": "Question 2 (5 points)",
+    "text": "Question 2 (5 points)\nUse summarize() to calculate the population mean and standard deviation of age and turnout (that is the mean and SD of these variables in the fulton data) and save the resulting tibble as pop_parameters with the tibble output looking like:\n# A tibble: 1 × 4\n  age_pop_mean age_pop_sd turnout_pop_prop turnout_pop_sd\n         <dbl>      <dbl>            <dbl>          <dbl>\n1         XX.X       XX.X            X.XXX          X.XXX\nMake sure that the column names are the same for the autograder. (Hint: you can summarize multiple variables in the same call to summarize.) Use knitr::kable() to present the values in nicely formatted table with digits = 2 to create nicely rounded numbers and informative column names (they may need to be abbreviated to fit on the page).\nRubric: 4pts for correct pop_parameters tibble (autograder); 1pts for nicely formatted table (PDF)."
+  },
+  {
+    "objectID": "assignments/06_hw_sampling.html#question-3-8-points",
+    "href": "assignments/06_hw_sampling.html#question-3-8-points",
+    "title": "Problem Set 6: Sampling from a Voter File",
+    "section": "Question 3 (8 points)",
+    "text": "Question 3 (8 points)\nIn the first line of the code chunk for this question use the following code:\n\nlibrary(infer)\nset.seed(02138)\n\nThen use rep_slice_sample() to take 1,000 samples of size 20 from fulton and calculate the sample mean of age and the sample mean/proportion of turnout for each of these samples. Save these as variables named age_mean and turnout_prop and save the resulting tibble as samples_n20.\nCreate a density histogram of the age means and with a bin width of 1 and save this as age_mean_hist. Create a density histogram of the turnout proportions and save this as turnout_prop_hist. Make sure both of these plots are shown in the PDF and that they have informative labels.\nIn the write-up, compare the sampling distribution of the sample mean and sample proportion here to the population distributions from question 1. Are the shapes of the sampling distributions similar or different to the population distributions? If different, how are they different?"
+  },
+  {
+    "objectID": "assignments/06_hw_sampling.html#question-4-7-points",
+    "href": "assignments/06_hw_sampling.html#question-4-7-points",
+    "title": "Problem Set 6: Sampling from a Voter File",
+    "section": "Question 4 (7 points)",
+    "text": "Question 4 (7 points)\nUse the summarize() function on samples_n20 to calculate the average (named ev_age and ev_turnout) and standard deviation (named se_age and se_turnout) of each sample mean/proportion across the repeated samples. Save this tibble as samp_dist_summary and it should look like this:\n# A tibble: 1 × 4\n  ev_age se_age ev_turnout se_turnout\n   <dbl>  <dbl>      <dbl>      <dbl>\n1   X.XX   X.XX      X.XXX      X.XXX\nMake sure that the column names are the same for the autograder. Use knitr::kable() to present the values in nicely formatted table with digits = 2 to create nicely rounded numbers.\nCompare the mean and SD of these sampling distributions to the population means and SDs from the previous question. Are these distributions centered on the same value? Which has more spread, the population distribution of age/turnout or the sampling distributions of their means? ## Question 5 (3 points)\nThe central limit theorem says that sums and means tend to be normally distributed so that 68% of the sampling distribution of the mean should be within 1 standard deviation of the expected value of the expected value. Let’s see if this if this approximation is good for our sampling distributions.\nUse mutate to create a new variable in samples_n20 called age_error that is the absolute value of the difference between age_mean and the average of the age_mean. Then create a variable called within_1sd_age that is TRUE is this absolute difference is less than or equal to the standard deviation of age_mean. Finally, take the mean of this variable to obtain the proportion of sample means that are within one SD of the mean of their distribution. Save the resulting 1x1 tibble as age_clt_n20.\nTo get you started, you can calculate the absolute value of the difference between a variable x and its mean using the following code:\n\nmydata |>\n  mutate(\n    error = abs(x - mean(x))\n  )\n\nReport this proportion in the main text and comment on whether it is similar to what the CLT would predict."
+  },
+  {
+    "objectID": "assignments/06_hw_sampling.html#question-6-5-points",
+    "href": "assignments/06_hw_sampling.html#question-6-5-points",
+    "title": "Problem Set 6: Sampling from a Voter File",
+    "section": "Question 6 (5 points)",
+    "text": "Question 6 (5 points)\nIn this question you will repeat the exercise from question 4, using turnout_prop instead.\nUse mutate to create a new variable in samples_n20 called turnout_error that is the absolute value of the difference between turnout_prop and the average of the turnout_prop. Then create a variable called within_1sd_turnout that is TRUE is this absolute difference is less than or equal to the standard deviation of turnout_prop. Finally, take the mean of this variable to obtain the proportion of sample means that are within one SD of the mean of their distribution. Save the resulting 1x1 tibble as turnout_clt_n20.\nReport this proportion in the main text and comment on whether it is similar to what the CLT would predict. If this is different than age, can you think of anything about the two variables that differ that might cause the CLT approximation to be better for one than the other?"
+  },
+  {
+    "objectID": "assignments/06_hw_sampling.html#question-7",
+    "href": "assignments/06_hw_sampling.html#question-7",
+    "title": "Problem Set 6: Sampling from a Voter File",
+    "section": "Question 7",
+    "text": "Question 7\nThis problem is optional.\nWrite the following line at the beginning of the code chunk for this problem:\n\nset.seed(02138)\n\nThen create a tibble called samples_n200 that replicates the exercise the sampling of question 3 but with 1,000 samples of size 200. With this tibble replicate the analysis of questions 4 and 5 to get the proportion of sample means/proportions age_mean and turnout_prop that are within 1 SD of the means of those distributions. You can save the resulting 1x1 tibbles for age as age_clt_n200 and for turnout as turnout_clt_n200.\nIn the write-up, report these values and answer the following questions. Does the normal approximation seem better here than with a sample size of 20? Which variable sees more improvement in the approximation?"
+  },
+  {
+    "objectID": "assignments/07_hw_bootstrap.html",
+    "href": "assignments/07_hw_bootstrap.html",
+    "title": "Problem Set 7: Exposure to Inequality and Support for Redistribution",
+    "section": "",
+    "text": "Does exposure to inequality affect our support for redistributive policies such as taxes on higher income earners? A recent paper explored the effect of brief exposure to socioeconomic inequality in an everyday setting on support for a millionaire’s tax. This exercise is based on:\n\nSands, Melissa L. 2017. “Exposure to inequality affects redistribution.” Proceedings of the National Academy of Sciences, 114(4): 663-668.\n\nIn this experiment, the author hired actors to stand in affluent, predominantly white, commercial areas around Boston, MA that have high pedestrian traffic. These actors were either white or Black, and each actor dressed in attire that indicated either affluence (well-dressed, well-groomed) or poverty (unkempt, shabby clothing). The author randomly assigned shifts to each actor with randomly chosen attire to stand on a city street within 20 feet of a petitioner hired by the researcher. This petitioner would stop every third adult that walked past the actor and ask them to sign a petition for the millionaire’s tax (a measure in MA to impose an additional tax of 4% on individuals with annual incomes of $1 million or more) or to sign a petition about reducing the use of plastic bags in local stores. The type of petition was randomly assigned as well. The outcome of interest is whether the respondent agreed to sign the petition on the millionaire’s tax (the plastic bag petition is used as a placebo).\nA total of 2,591 respondents were petitioned with 1,335 being petitioned about the millionaire’s tax. Petitioners also collected their “best guess” about the gender, age, and race/ethnicity of each person approached. The data file for this study is inequality-exposure.csv and contains the following variables:\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nsigned\n1 if the respondent signed the petition, 0 otherwise\n\n\nmill_tax\n1 if petitioned about the millionaire’s tax, 0 for plastic bag petition.\n\n\nblackactor\n1 if actor was Black for this respondent, 0 for white\n\n\npooractor\n1 if actor was in poverty condition, 0 for affluent condition\n\n\nblack\n1 if petitioner guessed respondent was Black\n\n\nwhite\n1 if petitioner guessed respondent was non-Hispanic white\n\n\nasian\n1 if petitioner guessed respondent was Asian\n\n\nhisp\n1 if petitioner guessed respondent was Hispanic\n\n\nyoung\n1 if petitioner guessed respondent was 18-35 years old\n\n\nmiddle\n1 if petitioner guessed respondent was 36-65 years old\n\n\nold\n1 if petitioner guessed respondent was >65 years old\n\n\nfemale\n1 if petitioner guessed respondent was female\n\n\nclust\nCluster number of respondent (see question 6)"
+  },
+  {
+    "objectID": "assignments/07_hw_bootstrap.html#question-1",
+    "href": "assignments/07_hw_bootstrap.html#question-1",
+    "title": "Problem Set 7: Exposure to Inequality and Support for Redistribution",
+    "section": "Question 1",
+    "text": "Question 1\nLoad the data into R and name it ineq. Create a tibble called mill_df that is filtered to respondents petitioned about the millionaire’s tax. We will use this data throughout the exercise. Create two new variables:\n\ncostume that is \"Poor\" when pooractor is 1 and \"Affluent\" otherwise\nrace_actor that is \"Black\" when blackactor is 1 and \"White\" otherwise\n\nCalculate the following object, saving it with the names indicated:\n\nineq_diff: The difference in means in petition signing (signed) between seeing the actor in the poor and affluent conditions (costume) for those who were petitioned about the millionaire’s tax. This should be a 1x1 tibble.\n\nReport this values in the text of your write up and briefly interpret it."
+  },
+  {
+    "objectID": "assignments/07_hw_bootstrap.html#question-2",
+    "href": "assignments/07_hw_bootstrap.html#question-2",
+    "title": "Problem Set 7: Exposure to Inequality and Support for Redistribution",
+    "section": "Question 2",
+    "text": "Question 2\nIn the first line of the code chunk for this question use the following code:\n\nlibrary(infer)\nset.seed(02138)\n\nGenerate 1,000 bootstrap replications of the estimated ATE from Question 1 and save these bootstraps in a tibble called ate_boots. You may use the rep_slice_sample() or specify/generate approach, but the column of bootstrapped ATEs should either be called ATE or stat.\nUse these bootstraps to calculate a 95% confidence interval for the difference in means using the percentile method and save this as ate_ci_95, which should be a 1 by 2 tibble.\nUse ggplot(), geom_histogram() to plot the bootstrap distribution and overlay it with the confidence interval using this geom:\n\ngeom_vline(xintercept = unlist(ate_ci_95))\n\nThis will be manually graded in the PDF so be sure it shows up in the PDF. Use informative labels.\nIn the writeup, discuss if the CI contains zero? What does that mean?"
+  },
+  {
+    "objectID": "assignments/07_hw_bootstrap.html#question-3",
+    "href": "assignments/07_hw_bootstrap.html#question-3",
+    "title": "Problem Set 7: Exposure to Inequality and Support for Redistribution",
+    "section": "Question 3",
+    "text": "Question 3\nExplain how to interpret 95% confidence intervals in terms of repeated sampling. Is it possible to produce a 100% confidence interval in this setting? If so, what is it and is it useful?"
+  },
+  {
+    "objectID": "assignments/07_hw_bootstrap.html#question-4",
+    "href": "assignments/07_hw_bootstrap.html#question-4",
+    "title": "Problem Set 7: Exposure to Inequality and Support for Redistribution",
+    "section": "Question 4",
+    "text": "Question 4\nCalculate the ATE for Black and White actors separately (using the race_actor variable) and calculate the interaction or difference between these two ATEs. The output should be a 1 row tibble named ate_race with columns ATE_Black, ATE_White, and ATE_Diff that are the ATE for Black actors, White actors and the difference between them, respectively.\nIn the write-up, report the interaction and describe what it means in the substance of this experiment."
+  },
+  {
+    "objectID": "assignments/07_hw_bootstrap.html#question-5",
+    "href": "assignments/07_hw_bootstrap.html#question-5",
+    "title": "Problem Set 7: Exposure to Inequality and Support for Redistribution",
+    "section": "Question 5",
+    "text": "Question 5\nIn the first line of the code chunk for this question use the following code:\n\nset.seed(02138)\n\nUse rep_slice_sample (not specify/generate) to generate 1000 boostrap replications of the difference in ATEs between Black and White actors from Question 4. Save this tibble as ate_race_boots.\nThen construct a 95% confidence interval for the difference between the ATE for black Actors and the ATE for White actors and save this confidence intervals as ate_race_ci_95.\nUse ggplot(), geom_histogram() to plot the bootstrap distribution and overlay it with the confidence interval using this geom:\n\ngeom_vline(xintercept = unlist(ate_race_ci_95))\n\nThis will be manually graded in the PDF so be sure it shows up in the PDF. Use informative labels.\nIn the writeup, discuss if the CI contains zero? What does that mean?"
+  },
+  {
+    "objectID": "assignments/08_hw_hyp_tests.html",
+    "href": "assignments/08_hw_hyp_tests.html",
+    "title": "Problem Set 8: The Effect of Cognitive Behavioral Therapy on Crime and Violence",
+    "section": "",
+    "text": "Can noncognitive skills and preferences like patience and identity be changed in adults? And can improving these skills lower crime and violence? A paper attempted to answer these questions with a randomized field experiment in Liberia. This exercise is based on:\n\nBlattman, Christopher, Julian C. Jamison, and Margaret Sheridan. 2017. “Reducing Crime and Violence: Experimental Evidence from Cognitive Behavioral Therapy in Liberia.” American Economic Review, 107(4): 1165-1206.\n\nIn this experiment, the researchers randomly assigned two different treatments to all respondents. Half of respondents were randomly assigned to eight weeks of cognitive behavioral therapy designed to reduce self-destructive beliefs or behaviors and promote positive ones. The sessions focused on encouraging goal-setting and self-control with simple behaviors and then built up to dealing with more realistic situations while learning to control emotions. The was to promote noncognitive skills that might reduce tendencies toward criminal activity or violence. Note that not everyone assigned to treatment actually attended all of the meetings. The second treatment was a randomly assigned cash prize of $200. The outcomes of interest are index measures of anti-social behavior like theft, carrying weapons, or selling drugs. An index combines all of these different variables into one continuous measure. The researchers also have baseline measures of some of these variables.\nA total of 999 respondents were randomized in the study. The data file for this study is data/cbt.csv and contains the following variables:\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\npartid\nparticipant ID number\n\n\ncashassigned\nparticipant assigned to cash treatment (1) or not (0)\n\n\ntpassigned\nparticipant assigned to CBT treatment (1) or not (0)\n\n\nattend_80\ndid the participant attend 80% CBT meetings (1) or not (0)\n\n\nsteals_basline\nhas the participant committed theft in the last 2 weeks before treatment\n\n\nhomeless_basline\nis the participant sleeping on the streets before treatment\n\n\nyear_born\nyear of birth of participant\n\n\nfam_asb_st\nindex score of anti-social behaviors 2 weeks posttreatment\n\n\ncarryweapon\ndoes participant carry a weapon, 2 weeks posttreatment\n\n\nfam_asb_lt\nindex score of anti-social behaviors 12 months posttreatment"
+  },
+  {
+    "objectID": "assignments/08_hw_hyp_tests.html#question-1",
+    "href": "assignments/08_hw_hyp_tests.html#question-1",
+    "title": "Problem Set 8: The Effect of Cognitive Behavioral Therapy on Crime and Violence",
+    "section": "Question 1",
+    "text": "Question 1\nExperiments are designed so that treatment assignment is unrelated to any background characteristics of the participants. But treatment and control groups will differ a bit by random chance even if they are the same on average. Let’s see if the randomization created groups that are fairly balanced by doing a balance test.\nLoad the tidyverse and infer packages and load the data into R and name it cbt. Create two new variables in the cbt tibble:\n\ncbt_assigned that is \"CBT\" if tpassigned is 1 and \"No CBT\" otherwise.\nunhoused_baseline that is \"Unhoused\" if homeless_baseline is 1 and \"Housed\" otherwise.\n\nCalculate the difference in proportions in the baseline measure of sleeping on the streets (unhoused_baseline) between the CBT treatment group and the non-CBT group (cbt_assigned). Save this value as base_diff. Next, use the infer framework to conduct a two-sided permutation hypothesis test of whether the CBT treatment group has the same proportion of unhoused_baseline as the non-CBT group. Calculate the two-sided p-value using get_p_value() and save it as base_p.\nReport the observed difference and the p-value in the write-up. With an \\(\\alpha\\) of 0.05, can you reject the null hypothesis that the proportion sleeping on the streets is the same in the two groups? Given that decision, which type of error (type I vs type II) would be worried for this test?\nNOTE: For this problem, set the seed to 02138 at the top of the chunk and use reps = 1000 when generating the permutations."
+  },
+  {
+    "objectID": "assignments/08_hw_hyp_tests.html#question-2",
+    "href": "assignments/08_hw_hyp_tests.html#question-2",
+    "title": "Problem Set 8: The Effect of Cognitive Behavioral Therapy on Crime and Violence",
+    "section": "Question 2",
+    "text": "Question 2\nA colleague suggests that you should use actual attendance at the CBT meetings rather than the random assignment since there shouldn’t be any treatment effect for those that don’t attend the meetings. To investigate this, you decide to do a balance test on the attendance variable that measures if a person actually attended 80% of the CBT meetings (attend_80). Create a new variable:\n\ncbt_attended that is \"Attended CBT\" if attend_80 is 1 and \"Not Attended\" otherwise.\n\nCalculate the difference in proportions in baseline sleeping on the streets (unhoused_baseline) for those that actually attended 80% of meetings versus those that did not (cbt_attended) and save this difference as base_diff_attend. Calculate the two-sided p-value for another permutation hypothesis for the null hypothesis that the true proportion of baseline sleeping on the street is the same across values of attend_80. Save this p-value as base_p_attend.\nReport the observed difference and the p-value in the write-up. Is any imbalance that you find on this variable statistically significant (that is, can you reject the null hypothesis) if \\(\\alpha\\) is 0.05? Which type of error are we worried about here? What parameter of the hypothesis test can control this type of error?\nNOTE: For this problem, set the seed to 02138 at the top of the chunk and use reps = 1000 when generating the permutations."
+  },
+  {
+    "objectID": "assignments/08_hw_hyp_tests.html#question-3",
+    "href": "assignments/08_hw_hyp_tests.html#question-3",
+    "title": "Problem Set 8: The Effect of Cognitive Behavioral Therapy on Crime and Violence",
+    "section": "Question 3",
+    "text": "Question 3\nExplain how the tests in questions 1 and 2 should inform whether it is better to use the CBT assignment or the actually attendence to the CBT meetings as the treatment variable when estimating causal effects."
+  },
+  {
+    "objectID": "assignments/08_hw_hyp_tests.html#question-4",
+    "href": "assignments/08_hw_hyp_tests.html#question-4",
+    "title": "Problem Set 8: The Effect of Cognitive Behavioral Therapy on Crime and Violence",
+    "section": "Question 4",
+    "text": "Question 4\nCalculate the estimated ATE of the CBT treatment assignment on the short-term index measure of anti-social behavior (fam_asb_st) and save the estimate as ate.\nGenerate 1000 simulations from the null distribution of a permutation hypothesis test of the null hypothesis that there is no treatment effect. Save this distribution as ate_null_dist. Plot this distribution of the difference in means under the null hypothesis along with the observed estimate. Explain, in substantive terms of this setting, what this distribution represents.\nCalculate the two-sided p-value and save it as ate_p. Is the estimated effect statistically significant when alpha is 0.05?\nNOTE: For this problem, set the seed to 02138 at the top of the chunk and use reps = 1000 when generating the permutations."
+  },
+  {
+    "objectID": "assignments/08_hw_hyp_tests.html#question-5",
+    "href": "assignments/08_hw_hyp_tests.html#question-5",
+    "title": "Problem Set 8: The Effect of Cognitive Behavioral Therapy on Crime and Violence",
+    "section": "Question 5",
+    "text": "Question 5\nCalculate the estimated ATE of the CBT treatment assignment on the long-term index measure of anti-social behavior (fam_asb_st) and save the estimate as ate_lt.\nGenerate 1000 simulations from the null distribution of a permutation hypothesis test of the null hypothesis that there is no treatment effect. Save this distribution as ate_lt_null_dist. Plot this distribution of the difference in means under the null hypothesis along with the observed estimate and the shaded region for the p-value using visualize() and shade_p_value().\nCalculate the two-sided p-value and save it as ate_lt_p. Is the estimated effect statistically significant when alpha is 0.05?\nIn the write up, describe what this and the ATE estimated in question 4 mean for the persistence of the effect of CBT over time?\nNOTE: For this problem, set the seed to 02138 at the top of the chunk and use reps = 1000 when generating the permutations."
   },
   {
     "objectID": "assignments/final-project.html",
