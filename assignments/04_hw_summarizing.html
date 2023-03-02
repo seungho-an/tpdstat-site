@@ -192,10 +192,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
-  <li><a href="#question-1-10-points" id="toc-question-1-10-points" class="nav-link" data-scroll-target="#question-1-10-points">Question 1 (10 points)</a></li>
-  <li><a href="#question-2-7-points" id="toc-question-2-7-points" class="nav-link" data-scroll-target="#question-2-7-points">Question 2 (7 points)</a></li>
-  <li><a href="#question-3-9-points" id="toc-question-3-9-points" class="nav-link" data-scroll-target="#question-3-9-points">Question 3 (9 points)</a></li>
-  <li><a href="#question-4-9-points" id="toc-question-4-9-points" class="nav-link" data-scroll-target="#question-4-9-points">Question 4 (9 points)</a></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   </ul>
 </nav>
@@ -286,8 +286,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="question-1-10-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-1-10-points">Question 1 (10 points)</h2>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p>Load the <code>tidyverse</code> package in the setup chunk. In the first chunk for this question use <code>read_csv</code> to load the <code>data/judges.csv</code> file into a data frame called <code>judges</code>. In this exercise, you will create a cross-tab that shows the gender breakdown within each party. In particular, the result should be a table with 2 rows and 3 columns, where the rows represent each gender and the columns correspond to party. In the end, you should have a table that looks like this (with the correct proportion, not these made up ones):</p>
 <table class="table">
 <thead>
@@ -323,20 +323,20 @@ ul.task-list li input[type="checkbox"] {
 <li>From your table, is the gender breakdown different for judges appointed by Democratic vs Republican presidents?</li>
 </ul>
 </section>
-<section id="question-2-7-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-2-7-points">Question 2 (7 points)</h2>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Use <code>group_by</code> and <code>summarize</code> to calculate the mean of <code>progressive_vote</code> in each combination of the <code>Gender</code> and <code>Party</code> variables you created in question 1 and save this tibble as <code>gender_party_means</code> (this tibble should have columns <code>Gender</code>, <code>Party</code>, and <code>progressive_vote</code>). Use this table to recreate the following barplot:</p>
 <p><img src="figures/gender_party_plot.png" class="img-fluid"></p>
-<p>The autograder will check the aesthetic mappings, the correct placement of the bars, and the labels, but you do not need to match the exact colors (they are <code>"steeblue1"</code> and <code>"indianred1"</code> if you do want to match, though).</p>
+<p>The exact colors used in the graph are <code>"steeblue1"</code> and <code>"indianred1"</code> if you do want to match, though.</p>
 <p>In the main text, briefly interpret the results of the analysis by describing which party and which gender tend to be more progress. Comment on whether there are larger differences across party or across gender in terms of progressive voting. Should we interpret any of these effects causally? Why or why not?</p>
 </section>
-<section id="question-3-9-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-3-9-points">Question 3 (9 points)</h2>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <p>What is the difference in the proportion of pro-feminist decisions between judges who have at least one daughter and those who do not have any? To compute this difference, first create a variable called <code>any_girls</code> that is <code>"Any Girls"</code> when the judge has at least 1 girl and <code>"No Girls"</code> otherwise and save this variable back to the <code>judges</code> tibble. Then, created a new tibble called <code>parents</code> that is filtered to contain judges that have at least one child. Create an object called <code>vote_by_girls</code> that has three columns: the unique values of the <code>any_girls</code> variable, the mean of the <code>progressive_vote</code> variable for each value of <code>any_girls</code> (column called <code>progressive_mean</code>), and the standard deviation of <code>progressive_vote</code> for each value of <code>any_girls</code> (column called <code>progressive_sd</code>). Present the table using <code>knitr::kable()</code>.</p>
 <p>In the main text, describe which group has a higher average progressive vote and which group’s distribution has more spread. Why might we worry about interpreting any difference in means causally, considering number of children as a possible confounder?</p>
 </section>
-<section id="question-4-9-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-4-9-points">Question 4 (9 points)</h2>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <p>Given that the number of children might be a confounder for the relationship between number of girls and voting, let’s estimate the average treatment effects of having girls using statistical control for the number of children among judges that have one to three children (that is, first filter to judges that only have between 1 and 3 children, inclusive). Your final table should be called <code>ate_nkids</code> and should be a tibble that has two columns: one with the number of children (1, 2, and 3) and the other with the estimated ATEs of <code>any_girls</code> for each of those levels. Print out this table using the <code>knitr::kable()</code> command.</p>
 <p>Are these estimated effects largely similar or largely different than what you found using all of the data? What assumption do you need to make to interpret these effects causally? Do you think it is plausible in this case?</p>
 </section>

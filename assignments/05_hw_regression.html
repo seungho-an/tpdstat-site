@@ -256,12 +256,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
   <li><a href="#question-1-3-points" id="toc-question-1-3-points" class="nav-link" data-scroll-target="#question-1-3-points">Question 1 (3 points)</a></li>
-  <li><a href="#question-2-7-points" id="toc-question-2-7-points" class="nav-link" data-scroll-target="#question-2-7-points">Question 2 (7 points)</a></li>
-  <li><a href="#question-3-7-points" id="toc-question-3-7-points" class="nav-link" data-scroll-target="#question-3-7-points">Question 3 (7 points)</a></li>
-  <li><a href="#question-4-7-points" id="toc-question-4-7-points" class="nav-link" data-scroll-target="#question-4-7-points">Question 4 (7 points)</a></li>
-  <li><a href="#question-5-6-points" id="toc-question-5-6-points" class="nav-link" data-scroll-target="#question-5-6-points">Question 5 (6 points)</a></li>
-  <li><a href="#question-6-2-points" id="toc-question-6-2-points" class="nav-link" data-scroll-target="#question-6-2-points">Question 6 (2 points)</a></li>
-  <li><a href="#question-7-3-points" id="toc-question-7-3-points" class="nav-link" data-scroll-target="#question-7-3-points">Question 7 (3 points)</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   </ul>
 </nav>
     </div>
@@ -335,17 +335,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="question-1-3-points">Question 1 (3 points)</h2>
 <p>Fraga analyzes turnout data for four different racial and ethnic groups, but for this analysis we will focus on the data for Black voters. Load <code>data/blackturnout.csv</code> and save it as <code>blackturnout</code>.</p>
 <p>In the write up, indicate which years are included in the dataset and how many different states are included in the dataset.</p>
-<p><strong>Rubric:</strong> 1pt for Rmd file compiling (autograder); 1pt for loading data (autograder); 1pt for indicating years in the data and number of states (PDF).</p>
 </section>
-<section id="question-2-7-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-2-7-points">Question 2 (7 points)</h2>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Create a boxplot that compares Black turnout in elections with and without a co-ethnic candidate and save the plot as <code>turnout_box</code>. Your plot should look like this:</p>
 <p><img src="figures/turnout_box.png" class="img-fluid"></p>
-<p>To create the x-axis variable that is nicely labeled, use <code>mutate()</code> to create a variable that is <code>"Yes"</code> when <code>candidate</code> is 1 and <code>"No"</code> otherwise (it does not matter what this variable is called to the autograder, but don’t overwrite your <code>candidate</code> variable!). Be sure to use informative labels, though they do not have to match the text exactly.</p>
+<p>To create the x-axis variable that is nicely labeled, use <code>mutate()</code> to create a variable that is <code>"Yes"</code> when <code>candidate</code> is 1 and <code>"No"</code> otherwise (while doing so, be careful not to overwrite your <code>candidate</code> variable!). Be sure to use informative labels, though they do not have to match the text exactly.</p>
 <p>In the write-up, report what the plot tells us about how turnout varies by the presence of a co-ethnic candidate.</p>
 </section>
-<section id="question-3-7-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-3-7-points">Question 3 (7 points)</h2>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <p>Run a linear regression with Black voter turnout as your outcome variable and candidate co-ethnicity as your predictor. Save this regression as <code>fit_1</code> and report the coefficients using a nicely formatted table with the following code (you may need to install the <code>broom</code> package to have this work):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="sc">|&gt;</span></span>
@@ -355,15 +354,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Interpret both of these coefficients. Do not merely comment on the direction of the association (i.e., whether the slope is positive or negative). Explain what the value of the coefficients mean in terms of the units in which each variable is measured. Are these results consistent with the prediction that Black voters turn out at higher rates when a co-ethnic candidate is running?</p>
 </section>
-<section id="question-4-7-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-4-7-points">Question 4 (7 points)</h2>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <p>You decide to investigate the results of the previous question a bit more carefully because the elections with co-ethnic candidates may differ from the elections without co-ethnic candidates in other ways. Create a scatter plot where the x-axis is the proportion of voting-age population that is Black and the y-axis is Black voter turnout. Color your points according to candidate co-ethnicity. That is, make the points for elections featuring co-ethnic candidates one color, and make the points for elections featuring no co-ethnic candidates a different color. You plot should look like this:</p>
 <p><img src="figures/turnout_scatter.png" class="img-fluid"></p>
 <p>You should save this plot as <code>turnout_scatter</code> and to create better labels for the color of the points, use <code>mutate()</code> in a similar way to question 2.</p>
 <p>Answer these questions in the write-up: What does this graph seem to imply about the relationship between Black voting-age population and Black turnout? What does it tell us about the relationship between Black voting-age population and the presence of a Black candidate?</p>
 </section>
-<section id="question-5-6-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-5-6-points">Question 5 (6 points)</h2>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Run a linear regression with Black turnout as your outcome variable and with candidate co-ethnicity and co-ethnic voting-age population as your predictors. Save the output of this regression as <code>fit_2</code> and report the coefficients using a nicely formatted table with the following code (you may need to install the <code>broom</code> package to have this work):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="sc">|&gt;</span></span>
@@ -373,12 +372,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>In the main text, interpret the coefficients on the two predictors, ignoring the intercept for now (you will interpret the intercept in the next question). Explain what each coefficient represents in terms of the units of the relevant variables.</p>
 </section>
-<section id="question-6-2-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-6-2-points">Question 6 (2 points)</h2>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <p>Now interpret the intercept from the regression model with two predictors. Is this intercept a substantively important or interesting quantity? Why or why not?</p>
 </section>
-<section id="question-7-3-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-7-3-points">Question 7 (3 points)</h2>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <p>Comparing the two regression models you have fit, what do you conclude about the relationship between co-ethnic candidates and Black voter turnout? Do they come to similar or different conclusions about this relationship? Which model do you prefer and why? (Please ignore issues of statistical significance for this question given that it will be covered later in the course.)</p>
 
 

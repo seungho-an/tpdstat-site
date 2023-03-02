@@ -255,11 +255,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
-  <li><a href="#question-1-7-points" id="toc-question-1-7-points" class="nav-link" data-scroll-target="#question-1-7-points">Question 1 (7 points)</a></li>
-  <li><a href="#question-2-5-points" id="toc-question-2-5-points" class="nav-link" data-scroll-target="#question-2-5-points">Question 2 (5 points)</a></li>
-  <li><a href="#question-3-8-points" id="toc-question-3-8-points" class="nav-link" data-scroll-target="#question-3-8-points">Question 3 (8 points)</a></li>
-  <li><a href="#question-4-7-points" id="toc-question-4-7-points" class="nav-link" data-scroll-target="#question-4-7-points">Question 4 (7 points)</a></li>
-  <li><a href="#question-6-5-points" id="toc-question-6-5-points" class="nav-link" data-scroll-target="#question-6-5-points">Question 6 (5 points)</a></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   </ul>
 </nav>
@@ -329,24 +330,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Note:</strong> please follow the directions carefully about setting the seed for the sampling based questions.</p>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="question-1-7-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-1-7-points">Question 1 (7 points)</h2>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p>Load the voter list data into R using <code>read_csv</code> and save the data as <code>fulton</code>.</p>
 <p>Create a density histogram of age with a bin width of 1 and save this plot as <code>age_hist</code> (use the aesthetic mapping <code>y = ..density..</code> in to accomplish this). Create a barplot for turnout with the proportion on the y-axis (use the aesthetic mapping <code>y = ..prop..</code> in <code>geom_barplot</code> to achieve this). Make sure both of these plots are shown in the PDF.</p>
 <p>In the write-up, state how many units are in the population (that is, how many rows are in the <code>fulton</code> data).</p>
 </section>
-<section id="question-2-5-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-2-5-points">Question 2 (5 points)</h2>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Use <code>summarize()</code> to calculate the population mean and standard deviation of <code>age</code> and <code>turnout</code> (that is the mean and SD of these variables in the <code>fulton</code> data) and save the resulting tibble as <code>pop_parameters</code> with the tibble output looking like:</p>
 <pre><code># A tibble: 1 × 4
   age_pop_mean age_pop_sd turnout_pop_prop turnout_pop_sd
          &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;          &lt;dbl&gt;
 1         XX.X       XX.X            X.XXX          X.XXX</code></pre>
-<p>Make sure that the column names are the same for the autograder. (<strong>Hint:</strong> you can summarize multiple variables in the same call to <code>summarize</code>.) Use <code>knitr::kable()</code> to present the values in nicely formatted table with <code>digits = 2</code> to create nicely rounded numbers and informative column names (they may need to be abbreviated to fit on the page).</p>
-<p><strong>Rubric:</strong> 4pts for correct <code>pop_parameters</code> tibble (autograder); 1pts for nicely formatted table (PDF).</p>
+<p>Make sure that the column names are the same (<strong>Hint:</strong> you can summarize multiple variables in the same call to <code>summarize</code>). Use <code>knitr::kable()</code> to present the values in nicely formatted table with <code>digits = 2</code> to create nicely rounded numbers and informative column names (they may need to be abbreviated to fit on the page).</p>
 </section>
-<section id="question-3-8-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-3-8-points">Question 3 (8 points)</h2>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <p>In the first line of the code chunk for this question use the following code:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
@@ -356,15 +356,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Create a density histogram of the age means and with a bin width of 1 and save this as <code>age_mean_hist</code>. Create a density histogram of the turnout proportions and save this as <code>turnout_prop_hist</code>. Make sure both of these plots are shown in the PDF and that they have informative labels.</p>
 <p>In the write-up, compare the sampling distribution of the sample mean and sample proportion here to the population distributions from question 1. Are the shapes of the sampling distributions similar or different to the population distributions? If different, how are they different?</p>
 </section>
-<section id="question-4-7-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-4-7-points">Question 4 (7 points)</h2>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
 <p>Use the <code>summarize()</code> function on <code>samples_n20</code> to calculate the average (named <code>ev_age</code> and <code>ev_turnout</code>) and standard deviation (named <code>se_age</code> and <code>se_turnout</code>) of each sample mean/proportion across the repeated samples. Save this tibble as <code>samp_dist_summary</code> and it should look like this:</p>
 <pre><code># A tibble: 1 × 4
   ev_age se_age ev_turnout se_turnout
    &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
 1   X.XX   X.XX      X.XXX      X.XXX</code></pre>
-<p>Make sure that the column names are the same for the autograder. Use <code>knitr::kable()</code> to present the values in nicely formatted table with <code>digits = 2</code> to create nicely rounded numbers.</p>
-<p>Compare the mean and SD of these sampling distributions to the population means and SDs from the previous question. Are these distributions centered on the same value? Which has more spread, the population distribution of age/turnout or the sampling distributions of their means? ## Question 5 (3 points)</p>
+<p>Make sure that the column names are the same. Use <code>knitr::kable()</code> to present the values in nicely formatted table with <code>digits = 2</code> to create nicely rounded numbers.</p>
+<p>Compare the mean and SD of these sampling distributions to the population means and SDs from the previous question. Are these distributions centered on the same value? Which has more spread, the population distribution of age/turnout or the sampling distributions of their means?</p>
+</section>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
 <p>The central limit theorem says that sums and means tend to be normally distributed so that 68% of the sampling distribution of the mean should be within 1 standard deviation of the expected value of the expected value. Let’s see if this if this approximation is good for our sampling distributions.</p>
 <p>Use <code>mutate</code> to create a new variable in <code>samples_n20</code> called <code>age_error</code> that is the absolute value of the difference between <code>age_mean</code> and the average of the <code>age_mean</code>. Then create a variable called <code>within_1sd_age</code> that is <code>TRUE</code> is this absolute difference is less than or equal to the standard deviation of <code>age_mean</code>. Finally, take the mean of this variable to obtain the proportion of sample means that are within one SD of the mean of their distribution. Save the resulting 1x1 tibble as <code>age_clt_n20</code>.</p>
 <p>To get you started, you can calculate the absolute value of the difference between a variable <code>x</code> and its mean using the following code:</p>
@@ -376,8 +379,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Report this proportion in the main text and comment on whether it is similar to what the CLT would predict.</p>
 </section>
-<section id="question-6-5-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-6-5-points">Question 6 (5 points)</h2>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <p>In this question you will repeat the exercise from question 4, using <code>turnout_prop</code> instead.</p>
 <p>Use <code>mutate</code> to create a new variable in <code>samples_n20</code> called <code>turnout_error</code> that is the absolute value of the difference between <code>turnout_prop</code> and the average of the <code>turnout_prop</code>. Then create a variable called <code>within_1sd_turnout</code> that is <code>TRUE</code> is this absolute difference is less than or equal to the standard deviation of <code>turnout_prop</code>. Finally, take the mean of this variable to obtain the proportion of sample means that are within one SD of the mean of their distribution. Save the resulting 1x1 tibble as <code>turnout_clt_n20</code>.</p>
 <p>Report this proportion in the main text and comment on whether it is similar to what the CLT would predict. If this is different than age, can you think of anything about the two variables that differ that might cause the CLT approximation to be better for one than the other?</p>
