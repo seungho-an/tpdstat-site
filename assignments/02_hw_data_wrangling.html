@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TPDstat - Problem Set 3: Data Wrangling</title>
+<title>TPDstat - Problem Set 2: Data Wrangling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,7 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Problem Set 3: Data Wrangling</h1>
+      <h1 class="quarto-secondary-nav-title">Problem Set 2: Data Wrangling</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -267,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Problem Set 3: Data Wrangling</h1>
+<h1 class="title d-none d-lg-block">Problem Set 2: Data Wrangling</h1>
 </div>
 
 
@@ -351,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 <p>Load the data using the <code>read_csv</code> function and save it as <code>fb_ads</code> (using this will automatically make <code>fb_ads</code> a tibble). In the text, describe how many candidates there are in the dataset.</p>
-<p>Use <code>dplyr</code> functions to create a table with the number of candidates in each type of office in the data set. Save this table output as <code>office_table</code> (for the autograder). Use the function <code>knitr::kable()</code> on this table to have a nicely formatted table produced in the knitted output.</p>
+<p>Use <code>dplyr</code> functions to create a table with the number of candidates in each type of office in the data set. Use the function <code>knitr::kable()</code> on this table to have a nicely formatted table produced in the knitted output.</p>
 </section>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
@@ -371,7 +371,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="question-4-13-points">Question 4 (13 points)</h2>
 <p>Let’s now recreate the following plot that shows the top 20 Senate candidates in terms of Facebook ad spending.</p>
 <p><img src="figures/senate-spenders.png" class="img-fluid" style="width:50.0%"></p>
-<p>You should save the <code>ggplot</code> output as <code>fb_top_plot</code>. The key features of this graph that you should replicate for the autograder are:</p>
+<p>You should save the <code>ggplot</code> output as <code>fb_top_plot</code>.</p>
 <ul>
 <li>The barplot should have candidate last names on the y-axis and the <code>spend_millions</code> variable from question 3 on the x-axis.</li>
 <li>The data feeding into the <code>ggplot</code> call should only have US Senate candidates and only the candidates with the highest 20 <code>spend_millions</code> values.</li>
