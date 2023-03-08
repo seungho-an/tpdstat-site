@@ -32,7 +32,7 @@
     "href": "assignments/01_hw_data_viz.html",
     "title": "Problem Set 1: Data Visualization",
     "section": "",
-    "text": "In this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using ggplot. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncountry\nname of the country\n\n\ncontinent\nname of the country’s continent\n\n\nyear\nyear of the measurement, ranging from 1952 to 2007 in 5-year increments\n\n\nlifeExp\nlife expectancy at birth, in years\n\n\npop\npopulation\n\n\ngdpPercap\nGDP per capita (US dollars, inflation-adjusted)"
+    "text": "In this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using ggplot. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncountry\nname of the country\n\n\ncontinent\nname of the country’s continent\n\n\nyear\nyear of the measurement, ranging from 1952 to 2007 in 5-year increments\n\n\nlifeExp\nlife expectancy at birth, in years\n\n\npop\npopulation\n\n\ngdpPercap\nGDP per capita (US dollars, inflation-adjusted)\n\n\n\n\n\n\n\nNOTE: In this template, the default settings for chunks is to show both R codes and the output of the chunks (echo = TRUE); if you do not want to show the R codes, you can change it to echo = FALSE, which can generate a clean look and highlight the output rather than the source code. However, for the purpose of grading (or evaluation), let’s keep the current option as it is."
   },
   {
     "objectID": "assignments/01_hw_data_viz.html#question-1",
@@ -495,6 +495,13 @@
     "title": "Data Transformation and Wrangling",
     "section": "Data",
     "text": "Data\n\nInstall the TPDdata package that has new data for this week:\n\n\nremotes::install_github(\"seungho-an/TPDdata\")"
+  },
+  {
+    "objectID": "materials/02_data_wrangling.html#slides",
+    "href": "materials/02_data_wrangling.html#slides",
+    "title": "Data Transformation and Wrangling",
+    "section": "Slides",
+    "text": "Slides\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: news.Rmd"
   },
   {
     "objectID": "materials/03_causality.html",

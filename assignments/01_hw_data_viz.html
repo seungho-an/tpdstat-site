@@ -247,8 +247,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<!-- You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets.qmd). -->
-<!-- You can find the GitHub Classroom link to download the template repository on the [Ed Board](https://edstem.org/us/courses/24957/resources) -->
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
 <p>In this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using <code>ggplot</code>. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.</p>
@@ -294,7 +292,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p><!-- **NOTE**: In the template you'll get from GitHub Classroom, the default settings for chunks is to only show the output of the chunk, not the code that generated it (`echo = FALSE`). This is to give your answers a clean look and to highlight the output rather than the source coe. The template also has a part that will dump all of the R code at the end so that we can look at it if needed.  --></p>
+<p><strong>NOTE</strong>: In this template, the default settings for chunks is to show both R codes and the output of the chunks (<code>echo = TRUE</code>); if you do not want to show the R codes, you can change it to <code>echo = FALSE</code>, which can generate a clean look and highlight the output rather than the source code. However, for the purpose of grading (or evaluation), let’s keep the current option as it is.</p>
 </section>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
@@ -316,12 +314,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- plot_q2 <- ggplot(data = gapminder, aes(x = continent, y = lifeExp)) + -->
 <!--   geom_boxplot() +   labs(x = "Continent", y = "Life expectancy at birth in years") -->
 <!-- plot_q2 -->
-<p><!-- **Rubric**: 10 autograder points.  --></p>
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
 <p>Looking at the previous plot, which continent has the highest median life expectancy? Which part of the boxplot can we determine this from?</p>
-<p><!-- **Rubric**: 5 write up points (2 for identifying the correct continent, 3 for correctly identifying how to find this on the boxplot) --> <!-- Oceania, the black cross line in the box --></p>
+<!-- Oceania, the black cross line in the box -->
 </section>
 <section id="question-4" class="level2">
 <h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
